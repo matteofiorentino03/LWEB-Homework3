@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="crediti_richieste">
+    <xs:complexType>
+        <xs:sequence>
+        <xs:element name="richiesta" maxOccurs="unbounded">
+            <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ID" type="xs:int"/>
+                <xs:element name="user_id" type="xs:int"/>
+                <xs:element name="importo" type="xs:decimal"/>
+                <xs:element name="stato">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                    <xs:enumeration value="In attesa"/>
+                    <xs:enumeration value="Approvata"/>
+                    <xs:enumeration value="Rifiutata"/>
+                    </xs:restriction>
+                </xs:simpleType>
+                </xs:element>
+                <xs:element name="created_at" type="xs:dateTime"/>
+            </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    </xs:element>
+</xs:schema>

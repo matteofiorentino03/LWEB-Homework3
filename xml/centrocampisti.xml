@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<centrocampisti xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="centrocampisti.xsd">
+  <centrocampista>
+    <ID_giocatore>14</ID_giocatore>
+    <gol_fatti>0</gol_fatti>
+    <assist>1</assist>
+    <ammonizioni>0</ammonizioni>
+    <espulsioni>0</espulsioni>
+    <ruolo>mediano</ruolo>
+  </centrocampista>
+  <centrocampista>
+    <ID_giocatore>15</ID_giocatore>
+    <gol_fatti>0</gol_fatti>
+    <assist>0</assist>
+    <ammonizioni>1</ammonizioni>
+    <espulsioni>0</espulsioni>
+    <ruolo>centrale</ruolo>
+  </centrocampista>
+  <centrocampista>
+    <ID_giocatore>16</ID_giocatore>
+    <gol_fatti>0</gol_fatti>
+    <assist>0</assist>
+    <ammonizioni>0</ammonizioni>
+    <espulsioni>0</espulsioni>
+    <ruolo>centrale</ruolo>
+  </centrocampista>
+  <centrocampista>
+    <ID_giocatore>17</ID_giocatore>
+    <gol_fatti>0</gol_fatti>
+    <assist>0</assist>
+    <ammonizioni>0</ammonizioni>
+    <espulsioni>0</espulsioni>
+    <ruolo>mezz ala</ruolo>
+  </centrocampista>
+  <centrocampista>
+    <ID_giocatore>18</ID_giocatore>
+    <gol_fatti>0</gol_fatti>
+    <assist>0</assist>
+    <ammonizioni>0</ammonizioni>
+    <espulsioni>0</espulsioni>
+    <ruolo>trequartista</ruolo>
+  </centrocampista>
+  <centrocampista>
+    <ID_giocatore>19</ID_giocatore>
+    <gol_fatti>1</gol_fatti>
+    <assist>0</assist>
+    <ammonizioni>0</ammonizioni>
+    <espulsioni>0</espulsioni>
+    <ruolo>trequartista</ruolo>
+  </centrocampista>
+</centrocampisti>

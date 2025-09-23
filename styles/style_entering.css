@@ -1,0 +1,112 @@
+/* Stile generale per la pagina */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif; 
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(185, 7, 7);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente il contenuto */
+    align-items: center; /* Centra orizzontalmente il contenuto */
+    min-height: 100vh; /* Assicura che la pagina prenda tutta l'altezza dello schermo */
+    overflow-y: auto; /* Abilita lo scorrimento verticale */
+}
+header {
+    background-color: rgb(185, 7, 7);
+    color: rgba(231, 179, 9, 0.877);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+.logo {
+    width: 50px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.logo:hover {
+    transform: scale(1.1); /* Ingrandisce il container al passaggio del mouse */
+}
+
+h1 {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+.login {
+    background-color: rgb(134, 3, 3);
+    border-radius: 5px;
+    padding: 15px 30px; /* Aumentato il padding per tasti più grandi */
+    font-size: 1.5em; /* Aumentata la dimensione del testo */
+    font-weight: bold;
+    width: 200px; /* Aumenta la larghezza per tasti più grandi */
+    text-align: center; /* Centra il testo */
+    transition: transform 0.3s ease; /* Aggiungi transizione per l'animazione */
+}
+
+
+.login:hover {
+    transform: scale(1.1); /* Ingrandisce il container al passaggio del mouse */
+}
+
+.utente-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 90px;
+}
+.login a {
+    text-decoration: none;
+    color: rgba(231, 179, 9, 0.877);
+    display: block;
+    width: 100%; /* Rende il link che copre tutto il bottone */
+}
+.registrazione {
+    background-color: rgb(134, 3, 3);
+    border-radius: 5px;
+    padding: 15px 30px; /* Aumentato il padding per tasti più grandi */
+    font-size: 1.5em; /* Aumentata la dimensione del testo */
+    font-weight: bold;
+    width: 200px; /* Aumenta la larghezza per tasti più grandi */
+    text-align: center; /* Centra il testo */
+    transition: transform 0.3s ease; /* Aggiungi transizione per l'animazione */
+}
+
+.registrazione:hover {
+    transform: scale(1.1); /* Ingrandisce il container al passaggio del mouse */
+}
+
+.registrazione a {
+    text-decoration: none;
+    color: rgba(231, 179, 9, 0.877);
+    display: block;
+    width: 100%; /* Rende il link che copre tutto il bottone */
+}
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+    font-size: 0.8em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    margin-top: auto;
+}

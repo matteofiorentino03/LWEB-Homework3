@@ -1,0 +1,160 @@
+/* ===== Reset & base ===== */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fafafa;
+  color: #222;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========== Header (uguale homepage/menù) ========== */
+header {
+  background: rgb(185, 7, 7);
+  color: rgba(231, 179, 9, 0.877);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  height: 100px;
+}
+.logo-container { display: flex; align-items: center; }
+.logo { 
+  vertical-align: middle;
+  width: 50px; 
+  margin: 0 10px; 
+  transition: transform 0.3s ease; 
+}
+.logo:hover { transform: scale(1.1); }
+h1 { 
+  flex: 1; 
+  text-align: center; 
+  font-size: 2.5em; 
+  font-weight: bold; 
+}
+.header-link { color: inherit; text-decoration: none; }
+
+/* Logout pill */
+.utente-container { display: flex; gap: 10px; align-items: center; }
+.logout {
+  background-color: rgb(134, 3, 3);
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.logout:hover { transform: scale(1.1); background-color: rgb(100, 0, 0); }
+.logout a { color: rgba(231,179,9,0.877); text-decoration: none; display: block; }
+
+/* ===== Layout ===== */
+.page { width: min(1200px, 92%); margin: 26px auto; flex: 1; }
+.page-title {
+  margin: 0 0 16px;
+  color: #7b0202;
+  text-align: center;
+}
+
+/* ===== Cards grid ===== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 8px 26px rgba(0,0,0,.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Media (immagini delle maglie) ===== */
+.card__media {
+  position: relative;
+  background: #f4f5f7;
+  width: 100%;
+  height: 280px;           /* altezza fissa per tutte le card */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.card__media img {
+  max-width: 85%;          /* tutte le immagini allineate */
+  max-height: 85%;
+  width: auto;
+  height: auto;
+  object-fit: contain;     /* mantiene proporzioni */
+  object-position: center;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.card__media:hover img {
+  transform: scale(1.03); /* leggero zoom */
+}
+
+.placeholder {
+  width: 100%; height: 100%;
+  display:flex; align-items:center; justify-content:center;
+  color:#777; font-size:.9rem;
+  background: linear-gradient(135deg,#f6f6f6,#ececec);
+}
+
+/* Badge tipo/stagione in overlay */
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #fff;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: .75rem;
+  font-weight: 800;
+  box-shadow: 0 2px 10px rgba(0,0,0,.08);
+}
+.badge--stagione { left: auto; right: 10px; }
+
+/* Body */
+.card__body { 
+  padding: 14px 16px 16px; 
+  display:flex; 
+  flex-direction:column; 
+  gap:8px; 
+}
+.card__title { 
+  margin: 0 0 4px; 
+  font-size: 1.05rem; 
+  color:#222; 
+}
+
+.field { display:flex; gap:8px; align-items: baseline; }
+.field__label { color:#666; font-weight:700; font-size:.9rem; }
+.chips { color:#222; }
+.price { font-weight: 800; color:#0a5f1f; }
+
+/* Vuoto */
+.empty { text-align:center; color:#666; margin-top: 28px; }
+
+/* Footer */
+footer{
+  margin-top:auto; 
+  background:#333; 
+  color:#fff; 
+  text-align:center;
+  padding: 12px; 
+  font-size: 13px; 
+  font-weight: 600;
+}
+
+/* Responsive tweak */
+@media (max-width: 640px){
+  header { padding: 16px; }
+  header h1 { font-size: 2em; }
+}

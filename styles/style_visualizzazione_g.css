@@ -1,0 +1,269 @@
+/* Stile generale per la pagina */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffffc4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-y: auto;
+}
+
+/* Header */
+header {
+    background-color: rgb(185, 7, 7);
+    color: rgba(231, 179, 9, 0.877);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    height: 100px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.logo {
+    vertical-align: middle;
+    width: 50px;
+    margin-right: 10px;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+
+h1 {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.header-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logout {
+    background-color: rgb(134, 3, 3);
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.logout:hover {
+    transform: scale(1.1);
+}
+
+.utente-container {
+    display: flex;
+    gap: 10px;
+}
+
+.logout a {
+    text-decoration: none;
+    color: rgba(231, 179, 9, 0.877);
+}
+
+/* Contenitore principale */
+.main-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 30px;
+    width: 100%;
+}
+
+/* Wrapper per scroll orizzontale della tabella */
+.table-wrapper {
+    overflow-x: auto;
+    width: 100%;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+}
+/* Immagini maglie responsive */
+.table-wrapper img {
+    max-height: 60px;         /* limite fisso in altezza */
+    height: auto;             /* mantiene proporzioni */
+    width: auto;              /* no deformazioni */
+    display: block;
+    margin: 0 auto;           /* centra l'immagine nella cella */
+    object-fit: contain;      /* scala mantenendo l'intero contenuto */
+  }
+
+/* Tabella */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 1200px;
+}
+
+thead {
+    background-color: #b90707;
+    color: white;
+}
+
+th, td {
+    padding: 12px 8px;
+    text-align: center;
+    border-right: 1px solid #ddd;
+    white-space: nowrap;
+}
+
+th:last-child, td:last-child {
+    border-right: none;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f0f0f0;
+}
+
+/* --- Colonne personalizzate --- */
+
+/* Nome Cognome */
+th:nth-child(1), td:nth-child(1) {
+    width: 200px;
+    text-align: left;
+    padding-left: 10px;
+    font-weight: bold;
+}
+
+/* CF */
+th:nth-child(2), td:nth-child(2) {
+    width: 150px;
+}
+
+/* Numero Maglia */
+th:nth-child(5), td:nth-child(5) {
+    width: 90px;
+    text-align: center;
+}
+
+/* Nazionalità */
+th:nth-child(7), td:nth-child(7) {
+    width: 180px;
+    text-align: left;
+    padding-left: 10px;
+    text-transform: capitalize;
+}
+
+/* Squadra di provenienza */
+th:nth-child(14), td:nth-child(14) {
+    width: 200px;
+    text-align: left;
+    padding-left: 10px;
+    text-transform: capitalize;
+}
+
+/* Disabilita maiuscola nella descrizione */
+.table-wrapper td:last-child {
+    text-transform: none;
+}
+
+/* Colonna “Dati Ruolo” */
+table th:last-child, 
+table td:last-child {
+    min-width: 250px;
+    max-width: 350px;
+    word-wrap: break-word;
+    white-space: normal;
+    text-align: left;
+    
+    padding-left: 10px;
+}
+
+/* Contenuto dettagliato nella colonna “Dati Ruolo” */
+.role-data {
+    min-width: 250px;
+    text-align: left;
+    font-size: 0.9em;
+    line-height: 1.4em;
+    padding: 8px;
+    white-space: normal;
+}
+
+.role-data br {
+    margin-bottom: 4px;
+}
+
+.role-data strong {
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 12px 10px;
+    width: 100%;
+    font-size: 0.8em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    margin-top: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main-container {
+        padding: 10px;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+}
+
+/* --- Immagine maglia responsive --- */
+.img-maglia {
+    display: block;
+    max-width: 100%;
+    max-height: 64px;   /* desktop cap */
+    width: auto;        /* keep aspect ratio */
+    height: auto;       /* keep aspect ratio */
+    margin: 0 auto;     /* center in cell */
+    object-fit: contain;
+  }
+  td:nth-child(7) {     /* "Descrizione" column per your table order */
+    white-space: normal;
+    text-align: left;
+  }
+  
+  @media (max-width: 768px) {
+    .img-maglia {
+      max-height: 96px; /* little bigger on mobile */
+    }
+
+  }

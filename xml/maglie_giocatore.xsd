@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="maglie_giocatore">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="personalizzazione" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" type="xs:int"/>
+              <xs:element name="Supplemento" type="xs:int"/>
+              <xs:element name="Logo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="SERIE A"/>
+                    <xs:enumeration value="CHAMPIONS LEAGUE"/>
+                    <xs:enumeration value="EUROPA LEAGUE"/>
+                    <xs:enumeration value="COPPA ITALIA"/>
+                    <xs:enumeration value="CONFERENCE LEAGUE"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID_Giocatore" type="xs:int"/>
+              <xs:element name="ID_Maglia" type="xs:int"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

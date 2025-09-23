@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="maglie">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="maglia" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" type="xs:int"/>
+              <xs:element name="tipo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="casa"/>
+                    <xs:enumeration value="fuori"/>
+                    <xs:enumeration value="terza"/>
+                    <xs:enumeration value="portiere"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="taglia">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="S"/>
+                    <xs:enumeration value="M"/>
+                    <xs:enumeration value="L"/>
+                    <xs:enumeration value="XL"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Sponsor" type="xs:string" minOccurs="0"/>
+              <xs:element name="stagione" type="xs:string"/>
+              <xs:element name="descrizione_maglia" type="xs:string"/>
+              <xs:element name="costo_fisso" type="xs:int"/>
+              <xs:element name="path_immagine" type="xs:string" minOccurs="0"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="attaccanti">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="attaccante" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_giocatore" type="xs:int"/>
+              <xs:element name="gol_fatti" type="xs:int"/>
+              <xs:element name="assist" type="xs:int"/>
+              <xs:element name="ammonizioni" type="xs:int"/>
+              <xs:element name="espulsioni" type="xs:int"/>
+              <xs:element name="ruolo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="punta"/>
+                    <xs:enumeration value="seconda punta"/>
+                    <xs:enumeration value="ala"/>
+                    <xs:enumeration value="falso 9"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

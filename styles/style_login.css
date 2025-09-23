@@ -1,0 +1,121 @@
+/* Stile generale per la pagina */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif; 
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffffc4;
+    color: #333;
+    display: flex;
+    justify-content: center; /* Centra orizzontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 100vh; /* Assicura che la pagina prenda tutta l'altezza dello schermo */
+    flex-direction: column; /* Disposizione in colonna */
+    text-align: center;
+    box-sizing: border-box;
+    overflow-y: auto; /* Abilita lo scorrimento verticale */
+}
+
+/* Header */
+header {
+    background-color: rgb(185, 7, 7); /* Colore rosso per l'header */
+    color: rgba(231, 179, 9, 0.877); /* Colore giallo per il testo */
+    display: flex;
+    justify-content: center; /* Centra il contenuto dell'header */
+    align-items: center;
+    padding: 40px 0;
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+    margin-bottom: 30px; /* Distanza tra l'header e il modulo */
+}
+.logo-container {
+    display: flex;
+    align-items: center; /* Allinea il logo al centro verticalmente */
+}
+
+.logo {
+    width: 50px; /* Ridimensiona il logo */
+    margin-right: 20px; /* Distanza tra logo e titolo */
+}
+h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Modulo di login */
+.login-container {
+    width: 100%; 
+    max-width: 400px; /* Limita la larghezza massima */
+    background-color: #fff;
+    padding: 30px; /* Aumenta il padding per fare più spazio */
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    justify-content: center;
+    font-size: 1.8em;
+    margin-bottom: 20px; /* Spazio tra il titolo e il modulo */
+}
+
+input[type="text"], input[type="password"] {
+    width: 70%; 
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.2em;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type="submit"] {
+    width: 70%; 
+    align-items: center;
+    padding: 10px;
+    background-color: rgb(134, 3, 3);
+    color: white;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+input[type="submit"]:hover {
+    background-color: rgb(134, 3, 3);
+    align-items: center;
+}
+
+/* Messaggio di errore */
+.error-message {
+    color: red;
+    text-align: center;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+/* Stile per il footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+    font-size: 0.8em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    margin-top: auto;
+}

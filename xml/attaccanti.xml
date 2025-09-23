@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<attaccanti xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="attaccanti.xsd">
+  <attaccante>
+    <ID_giocatore>20</ID_giocatore>
+    <gol_fatti>0</gol_fatti>
+    <assist>0</assist>
+    <ammonizioni>0</ammonizioni>
+    <espulsioni>0</espulsioni>
+    <ruolo>ala</ruolo>
+  </attaccante>
+  <attaccante>
+    <ID_giocatore>22</ID_giocatore>
+    <gol_fatti>1</gol_fatti>
+    <assist>1</assist>
+    <ammonizioni>0</ammonizioni>
+    <espulsioni>0</espulsioni>
+    <ruolo>punta</ruolo>
+  </attaccante>
+  <attaccante>
+    <ID_giocatore>23</ID_giocatore>
+    <gol_fatti>0</gol_fatti>
+    <assist>0</assist>
+    <ammonizioni>0</ammonizioni>
+    <espulsioni>0</espulsioni>
+    <ruolo>seconda punta</ruolo>
+  </attaccante>
+  <attaccante>
+    <ID_giocatore>24</ID_giocatore>
+    <gol_fatti>0</gol_fatti>
+    <assist>0</assist>
+    <ammonizioni>0</ammonizioni>
+    <espulsioni>0</espulsioni>
+    <ruolo>punta</ruolo>
+  </attaccante>
+  <attaccante>
+    <ID_giocatore>25</ID_giocatore>
+    <gol_fatti>0</gol_fatti>
+    <assist>1</assist>
+    <ammonizioni>0</ammonizioni>
+    <espulsioni>0</espulsioni>
+    <ruolo>punta</ruolo>
+  </attaccante>
+</attaccanti>

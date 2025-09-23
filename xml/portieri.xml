@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portieri xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="portieri.xsd">
+  <portiere>
+    <ID_giocatore>1</ID_giocatore>
+    <gol_subiti>3</gol_subiti>
+    <gol_fatti>0</gol_fatti>
+    <assist>0</assist>
+    <clean_sheet>2</clean_sheet>
+    <ammonizioni>0</ammonizioni>
+    <espulsioni>0</espulsioni>
+  </portiere>
+  <portiere>
+    <ID_giocatore>2</ID_giocatore>
+    <gol_subiti>0</gol_subiti>
+    <gol_fatti>0</gol_fatti>
+    <assist>0</assist>
+    <clean_sheet>0</clean_sheet>
+    <ammonizioni>0</ammonizioni>
+    <espulsioni>0</espulsioni>
+  </portiere>
+  <portiere>
+    <ID_giocatore>3</ID_giocatore>
+    <gol_subiti>0</gol_subiti>
+    <gol_fatti>0</gol_fatti>
+    <assist>0</assist>
+    <clean_sheet>0</clean_sheet>
+    <ammonizioni>0</ammonizioni>
+    <espulsioni>0</espulsioni>
+  </portiere>
+  <portiere>
+    <ID_giocatore>4</ID_giocatore>
+    <gol_subiti>0</gol_subiti>
+    <gol_fatti>0</gol_fatti>
+    <assist>0</assist>
+    <clean_sheet>0</clean_sheet>
+    <ammonizioni>0</ammonizioni>
+    <espulsioni>0</espulsioni>
+  </portiere>
+</portieri>

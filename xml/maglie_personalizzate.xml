@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<maglie_personalizzate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="maglie_personalizzate.xsd">
+  <maglia>
+    <ID>1</ID>
+    <ID_Maglia>10</ID_Maglia>
+    <Logo>SERIE A</Logo>
+    <supplemento>20</supplemento>
+    <nome>CAP</nome>
+    <num_maglia>90</num_maglia>
+  </maglia>
+  <maglia>
+    <ID>2</ID>
+    <ID_Maglia>2</ID_Maglia>
+    <Logo>CONFERENCE LEAGUE</Logo>
+    <supplemento>20</supplemento>
+    <nome>SHOMURODOV</nome>
+    <num_maglia>89</num_maglia>
+  </maglia>
+  <maglia>
+    <ID>3</ID>
+    <ID_Maglia>43</ID_Maglia>
+    <Logo>SERIE A</Logo>
+    <supplemento>20</supplemento>
+    <nome>ff</nome>
+    <num_maglia>69</num_maglia>
+  </maglia>
+</maglie_personalizzate>

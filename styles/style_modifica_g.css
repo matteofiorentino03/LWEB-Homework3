@@ -1,0 +1,192 @@
+/* Reset & base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background:#ffffffc4;color:#333;display:flex;flex-direction:column;
+    min-height:100vh;overflow-y:auto
+  }
+
+/* Header */
+header {
+    background-color: rgb(185, 7, 7);
+    color: rgba(231, 179, 9, 0.877);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    height: 100px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    vertical-align: middle;
+    width: 50px;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+h1 {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.header-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Logout */
+.logout {
+    background-color: rgb(134, 3, 3);
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: rgba(231, 179, 9, 0.877);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.logout:hover {
+    transform: scale(1.05);
+    background-color: rgb(100, 0, 0);
+}
+
+.logout a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.utente-container {
+    display: flex;
+    gap: 10px;
+}
+
+/* Titolo */
+h2 {
+    text-align: center;
+    margin: 30px 0 20px;
+    color: rgb(134, 3, 3);
+}
+
+/* Form */
+form {
+    width: 95%;
+    max-width: 900px;
+    margin: 0 auto 30px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+form select,
+form input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form label {
+    margin-top: 10px;
+    display: block;
+}
+
+form input {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+/* Griglia due colonne */
+form .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Solo su desktop */
+@media (max-width: 768px) {
+    form .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+form button[type="submit"] {
+    background-color: rgb(134, 3, 3);
+    color: white;
+    padding: 12px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+}
+
+form button[type="submit"]:hover {
+    background-color: #a30202;
+    transform: scale(1.03);
+}
+
+p {
+    text-align: center;
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+p[style*="color:red"] {
+    color: #c00 !important;
+    font-weight: bold;
+}
+
+p[style*="color:green"] {
+    color: #0b0 !important;
+    font-weight: bold;
+}
+
+/* Blocchi ruolo */
+.role-block {
+    background-color: #f9f9f9;
+    border-left: 4px solid rgb(134, 3, 3);
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 12px 10px;
+    width: 100%;
+    font-size: 0.8em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    margin-top: auto;
+  }

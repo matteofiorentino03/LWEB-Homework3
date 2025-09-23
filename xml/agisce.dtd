@@ -1,0 +1,6 @@
+<!ELEMENT agisce (azione*)>
+<!ELEMENT azione (ID, ID_utenti, ID_giocatore, data_inserimento)>
+<!ELEMENT ID (#PCDATA)>
+<!ELEMENT ID_utenti (#PCDATA)>
+<!ELEMENT ID_giocatore (#PCDATA)>
+<!ELEMENT data_inserimento (#PCDATA)>

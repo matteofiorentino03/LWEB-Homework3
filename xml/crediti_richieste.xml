@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crediti_richieste xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="crediti_richieste.xsd">
+  <richiesta>
+    <ID>1</ID>
+    <user_id>2</user_id>
+    <importo>100.50</importo>
+    <stato>Approvata</stato>
+    <created_at>2025-09-20T10:30:00</created_at>
+  </richiesta>
+  <richiesta>
+    <ID>2</ID>
+    <user_id>2</user_id>
+    <importo>125.00</importo>
+    <stato>Approvata</stato>
+    <created_at>2025-09-22T18:25:35</created_at>
+  </richiesta>
+  <richiesta>
+    <ID>3</ID>
+    <user_id>2</user_id>
+    <importo>13.00</importo>
+    <stato>Rifiutata</stato>
+    <created_at>2025-09-22T18:33:31</created_at>
+  </richiesta>
+  <richiesta>
+    <ID>4</ID>
+    <user_id>4</user_id>
+    <importo>5000.00</importo>
+    <stato>Approvata</stato>
+    <created_at>2025-09-23T17:04:19</created_at>
+  </richiesta>
+</crediti_richieste>

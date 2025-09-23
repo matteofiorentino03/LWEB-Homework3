@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="giocatori">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="giocatore" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" type="xs:int"/>
+              <xs:element name="cf" type="xs:string"/>
+              <xs:element name="nome" type="xs:string"/>
+              <xs:element name="cognome" type="xs:string"/>
+              <xs:element name="nazionalita" type="xs:string"/>
+              <xs:element name="datanascita" type="xs:date"/>
+              <xs:element name="num_maglia" type="xs:int"/>
+              <xs:element name="altezza" type="xs:decimal"/>
+              <xs:element name="market_value" type="xs:decimal"/>
+              <xs:element name="presenze" type="xs:int"/>
+              <xs:element name="cod_contratto" type="xs:string"/>
+              <xs:element name="Tipo_Contratto">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="TRASFERIMENTO TEMPORANEO"/>
+                    <xs:enumeration value="TRASFERIMENTO DEFINITIVO"/>
+                    <xs:enumeration value="PROMOSSO DALLA PRIMAVERA"/>
+                    <xs:enumeration value="RINNOVATO"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="stipendio" type="xs:decimal"/>
+              <xs:element name="Data_inizio" type="xs:date"/>
+              <xs:element name="Data_scadenza" type="xs:date"/>
+              <xs:element name="ID_utenti" type="xs:int"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

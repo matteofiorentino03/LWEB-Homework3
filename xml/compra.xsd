@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="compra">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ordine" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" type="xs:int"/>
+              <xs:element name="ID_Utente" type="xs:int"/>
+              <xs:element name="ID_Maglia" type="xs:int"/>
+              <xs:element name="pagamento_finale" type="xs:int"/>
+              <xs:element name="indirizzo_consegna" type="xs:string"/>
+              <xs:element name="data_compra" type="xs:date"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

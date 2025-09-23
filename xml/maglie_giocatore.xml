@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<maglie_giocatore xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="maglie_giocatore.xsd">
+  <personalizzazione>
+    <ID>1</ID>
+    <Supplemento>10</Supplemento>
+    <ID_Giocatore>20</ID_Giocatore>
+    <ID_Maglia>9</ID_Maglia>
+  </personalizzazione>
+  <personalizzazione>
+    <ID>2</ID>
+    <Supplemento>10</Supplemento>
+    <ID_Giocatore>19</ID_Giocatore>
+    <ID_Maglia>3</ID_Maglia>
+  </personalizzazione>
+  <personalizzazione>
+    <ID>3</ID>
+    <Supplemento>10</Supplemento>
+    <ID_Giocatore>25</ID_Giocatore>
+    <ID_Maglia>7</ID_Maglia>
+  </personalizzazione>
+</maglie_giocatore>

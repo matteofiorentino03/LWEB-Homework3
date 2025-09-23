@@ -1,0 +1,216 @@
+/* Stile generale per la pagina */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffffc4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;   
+}
+
+/* Header */
+header {
+    background-color: rgb(185, 7, 7);
+    color: rgba(231, 179, 9, 0.877);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    height: 100px;
+
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    vertical-align: middle;
+    width: 50px;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+h1 {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.header-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logout {
+    background-color: rgb(134, 3, 3);
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.logout:hover {
+    transform: scale(1.1);
+}
+
+.logout a {
+    text-decoration: none;
+    color: rgba(231, 179, 9, 0.877);
+}
+
+.utente-container {
+    display: flex;
+    gap: 10px;
+}
+
+/* Sezione di benvenuto */
+.testo-iniziale {
+    flex-grow: 1;
+    font-size: 1.2em;
+    color: black;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+.testo-iniziale h2 {
+    font-weight: bold;
+}
+
+.testo-iniziale p {
+    font-style: italic;
+}
+
+/* Contenitore principale con grid layout */
+.main-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: start;
+    min-height: 77vh;
+}
+
+/* Sezione immagine */
+.slideshow-container img,
+.slideshow-container {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+    object-position: top;
+}
+
+.slideshow-container img:hover {
+    transform: scale(1.03);
+}
+
+
+
+/* Sezione tabella (box con le opzioni) */
+.table {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.table p {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* Lista voci azioni (effetto pulsante elegante) */
+.table-list {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+}
+
+.table-list li {
+    margin: 15px 0;
+}
+
+.table-list a {
+    display: block;
+    background-color: #e8e8e8;
+    padding: 15px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1em;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.table-list a:hover {
+    background-color: #d6d6d6;
+    transform: scale(1.03);
+    color: rgb(185, 7, 7);
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 12px 10px;
+    width: 100%;
+    font-size: 0.8em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main-container {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .slideshow-container img {
+        max-width: 100%;
+    }
+
+    .table {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .table-list a {
+        font-size: 1em;
+        padding: 12px;
+    }
+}

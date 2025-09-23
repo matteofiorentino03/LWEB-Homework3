@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE agisce SYSTEM "agisce.dtd">
+<agisce>
+  <azione>
+    <ID>1</ID>
+    <ID_utenti>1</ID_utenti>
+    <ID_giocatore>1</ID_giocatore>
+    <data_inserimento>2025-09-20</data_inserimento>
+  </azione>
+  
+  <azione>
+    <ID>2</ID>
+    <ID_utenti>1</ID_utenti>
+    <ID_giocatore>2</ID_giocatore>
+    <data_inserimento>2025-09-20</data_inserimento>
+  </azione>
+
+  <azione>
+    <ID>3</ID>
+    <ID_utenti>1</ID_utenti>
+    <ID_giocatore>3</ID_giocatore>
+    <data_inserimento>2025-09-20</data_inserimento>
+  </azione>
+
+  <azione>
+    <ID>4</ID>
+    <ID_utenti>1</ID_utenti>
+    <ID_giocatore>4</ID_giocatore>
+    <data_inserimento>2025-09-20</data_inserimento>
+  </azione>
+  
+  <azione>
+    <ID>5</ID>
+    <ID_utenti>1</ID_utenti>
+    <ID_giocatore>5</ID_giocatore>
+    <data_inserimento>2025-09-20</data_inserimento>
+  </azione>
+  
+  <azione>
+    <ID>6</ID>
+    <ID_utenti>1</ID_utenti>
+    <ID_giocatore>6</ID_giocatore>
+    <data_inserimento>2025-09-20</data_inserimento>
+  </azione>
+
+  <azione>
+    <ID>7</ID>
+    <ID_utenti>1</ID_utenti>
+    <ID_giocatore>7</ID_giocatore>
+    <data_inserimento>2025-09-20</data_inserimento>
+  </azione>
+
+  <azione>
+    <ID>8</ID>
+    <ID_utenti>1</ID_utenti>
+    <ID_giocatore>8</ID_giocatore>
+    <data_inserimento>2025-09-20</data_inserimento>
+  </azione>
+
+  <azione>
+    <ID>9</ID>
+    <ID_utenti>1</ID_utenti>
+    <ID_giocatore>9</ID_giocatore>
+    <data_inserimento>2025-09-20</data_inserimento>
+  </azione>
+
+  <azione>
+    <ID>10</ID>
+    <ID_utenti>1</ID_utenti>
+    <ID_giocatore>10</ID_giocatore>
+    <data_inserimento>2025-09-20</data_inserimento>
+  </azione>
+
+  <azione>
+    <ID>11</ID>
+    <ID_utenti>1</ID_utenti>
+    <ID_giocatore>11</ID_giocatore>
+    <data_inserimento>2025-09-20</data_inserimento>
+  </azione>
+
+  <azione>
+    <ID>12</ID>
+    <ID_utenti>1</ID_utenti>
+    <ID_giocatore>12</ID_giocatore>
+    <data_inserimento>2025-09-20</data_inserimento>
+  </azione>
+
+  <azione>
+    <ID>13</ID>
+    <ID_utenti>1</ID_utenti>
+    <ID_giocatore>13</ID_giocatore>
+    <data_inserimento>2025-09-20</data_inserimento>
+  </azione>
+
+  <azione>
+    <ID>14</ID>
+    <ID_utenti>1</ID_utenti>
+    <ID_giocatore>14</ID_giocatore>
+    <data_inserimento>2025-09-20</data_inserimento>
+  </azione>
+
+  <azione>
+    <ID>15</ID>
+    <ID_utenti>1</ID_utenti>
+    <ID_giocatore>15</ID_giocatore>
+    <data_inserimento>2025-09-20</data_inserimento>
+  </azione>
+
+  <azione>
+    <ID>16</ID>
+    <ID_utenti>1</ID_utenti>
+    <ID_giocatore>16</ID_giocatore>
+    <data_inserimento>2025-09-20</data_inserimento>
+  </azione>
+
+  <azione>
+    <ID>17</ID>
+    <ID_utenti>1</ID_utenti>
+    <ID_giocatore>17</ID_giocatore>
+    <data_inserimento>2025-09-20</data_inserimento>
+  </azione>
+
+  <azione>
+    <ID>18</ID>
+    <ID_utenti>1</ID_utenti>
+    <ID_giocatore>18</ID_giocatore>
+    <data_inserimento>2025-09-20</data_inserimento>
+  </azione>
+
+  <azione>
+    <ID>19</ID>
+    <ID_utenti>1</ID_utenti>
+    <ID_giocatore>19</ID_giocatore>
+    <data_inserimento>2025-09-20</data_inserimento>
+  </azione>
+
+  <azione>
+    <ID>20</ID>
+    <ID_utenti>1</ID_utenti>
+    <ID_giocatore>20</ID_giocatore>
+    <data_inserimento>2025-09-20</data_inserimento>
+  </azione>
+
+  <azione>
+    <ID>21</ID>
+    <ID_utenti>1</ID_utenti>
+    <ID_giocatore>21</ID_giocatore>
+    <data_inserimento>2025-09-20</data_inserimento>
+  </azione>
+
+  <azione>
+    <ID>22</ID>
+    <ID_utenti>1</ID_utenti>
+    <ID_giocatore>22</ID_giocatore>
+    <data_inserimento>2025-09-20</data_inserimento>
+  </azione>
+
+  <azione>
+    <ID>23</ID>
+    <ID_utenti>1</ID_utenti>
+    <ID_giocatore>23</ID_giocatore>
+    <data_inserimento>2025-09-20</data_inserimento>
+  </azione>
+
+  <azione>
+    <ID>24</ID>
+    <ID_utenti>1</ID_utenti>
+    <ID_giocatore>24</ID_giocatore>
+    <data_inserimento>2025-09-20</data_inserimento>
+  </azione>
+
+  <azione>
+    <ID>25</ID>
+    <ID_utenti>1</ID_utenti>
+    <ID_giocatore>25</ID_giocatore>
+    <data_inserimento>2025-09-20</data_inserimento>
+  </azione>
+</agisce>

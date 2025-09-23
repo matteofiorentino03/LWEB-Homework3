@@ -1,0 +1,156 @@
+/* Stile generale per la pagina */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif; 
+}
+html{
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffffc4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-y: auto; /* Abilita lo scorrimento verticale */
+}
+
+header {
+    background-color: rgb(185, 7, 7);
+    color: rgba(231, 179, 9, 0.877);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    height: 100px;
+}
+
+.testo-iniziale {
+    flex-grow: 1;
+    font-size: 1.2em;
+    color: black;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+.testo-iniziale h2 {
+    font-weight: bold;
+}
+.testo-iniziale p {
+   font-style: italic;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.logo {
+    vertical-align: middle;
+    width: 50px;
+    margin-right: 10px;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+
+h1 {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.header-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logout {
+    background-color: rgb(134, 3, 3);
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.logout:hover {
+    transform: scale(1.1);
+}
+
+.utente-container {
+    display: flex;
+    gap: 10px;
+}
+
+.logout a {
+    text-decoration: none;
+    color: rgba(231, 179, 9, 0.877);
+}
+
+/* Contenitore principale */
+.main-container {
+    flex: 1; /* Spinge il footer in basso */
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 30px;
+    width: 100%;
+}
+
+.badge{
+    display:inline-block; padding:6px 10px; border-radius:999px;
+    font-size:12px; font-weight:700; letter-spacing:.2px;
+}
+.badge-success{ background:#e9f8ed; color:#116b2b; border:1px solid #b9e3c7; }
+.badge-danger{  background:#ffe5e5; color:#a30000; border:1px solid #f3b7b7; }
+.badge-muted{   background:#f1f1f1; color:#555;    border:1px solid #e0e0e0; }
+
+.tbl {
+    width: 100%; border-collapse: collapse; background:#fff;
+    box-shadow:0 2px 6px rgba(0,0,0,.1); border-radius:8px; overflow:hidden;
+        }
+.tbl thead { background:#b90707; color:#fff; }
+.tbl th, .tbl td { padding:12px 10px; border-bottom:1px solid #eee; text-align:center; }
+.tbl th + th, .tbl td + td { border-left:1px solid #eee; }
+.tbl tbody tr:last-child td { border-bottom:none; }
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 12px 10px;
+    width: 100%;
+    font-size: 0.8em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    margin-top: auto; /* Magia per spingerlo in fondo */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main-container {
+        padding: 10px;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+}
+
