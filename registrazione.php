@@ -13,22 +13,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $codice_fiscale = $_POST['Codice-Fiscale'];
     $username = $_POST['username'];
     $password = $_POST['password'];
-    $ruolo = 'utente'; // Ruolo fisso (solo utenti)
+
+    // Valori di default
+    $ruolo = 'Cliente';           // Ruolo fisso (solo clienti)
+    $status = 'Attivo';           // Stato di default
+    $crediti = 'NULL';            // Nessun credito iniziale
+    $reputazione = 35.00;         // Reputazione iniziale
+    $data = date('Y-m-d H:i:s');
 
     // Protezione contro SQL Injection
     $codice_fiscale = $conn->real_escape_string($codice_fiscale);
     $username = $conn->real_escape_string($username);
     $password = $conn->real_escape_string($password);
 
-    // Query per inserire i dati nel database (ruolo fisso utente)
-    $sql = "INSERT INTO Utenti (cf, ruolo, username, Password_Utente) 
-            VALUES ('$codice_fiscale', '$ruolo', '$username', '$password')";
+    // Query per inserire i dati nel database
+    $sql = "INSERT INTO Utenti (cf, ruolo, username, Password_Utente, status, crediti, reputazione, data_registrazione) 
+            VALUES ('$codice_fiscale', '$ruolo', '$username', '$password', '$status', NULL, $reputazione, '$data')";
 
     if ($conn->query($sql) === TRUE) {
-        echo "<script>alert('Registrazione completata con successo'); window.location.href='login.php';</script>";
+        echo "<script>alert('Registrazione completata con successo!'); window.location.href='login.php';</script>";
         exit();
     } else {
-        echo "<script>alert('Errore durante la registrazione: " . $conn->error . "');</script>";
+        echo "<script>alert('Errore durante la registrazione: " . addslashes($conn->error) . "');</script>";
     }
 }
 ?>
@@ -41,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PLAYERBASE</title>
+    <title>PLAYERBASE - Registrazione</title>
     <link rel="stylesheet" href="styles/style_registrazione.css">
 </head>
 <body>
@@ -56,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <form action="registrazione.php" method="POST" class="reg-form">
             <h2>Registra il tuo account</h2>
 
-            <label for="Codice-Fiscale">CF:</label>
+            <label for="Codice-Fiscale">Codice Fiscale:</label>
             <input type="text" id="Codice-Fiscale" name="Codice-Fiscale" maxlength="16" required />
 
             <label for="username">Username:</label>
@@ -71,6 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     <footer>
         <p>&copy; 2025 Playerbase. Tutti i diritti riservati.</p>
+        <a class="link_footer" href="contatti.php">Contatti, policy, privacy</a>
     </footer>
 </body>
 </html>

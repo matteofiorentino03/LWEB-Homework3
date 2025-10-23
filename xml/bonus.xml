@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bonus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="bonus.xsd">
+  <premio>
+    <ID>1</ID>
+    <tipo>MagliaRetro</tipo>
+    <descrizione>Bonus di 15 crediti, se è una Maglia Retrò (delle scorse stagioni).</descrizione>
+    <crediti>15</crediti>
+    <attivo>true</attivo>
+  </premio>
+  <premio>
+    <ID>2</ID>
+    <tipo>Reputazione</tipo>
+    <descrizione>Bonus di 33 crediti, se il Cliente ha una reputazione Alta ed è un fedelissimo.</descrizione>
+    <crediti>33</crediti>
+    <reputazioneMinima>69</reputazioneMinima>
+    <limite_utilizzi>3</limite_utilizzi>
+    <data_inizio>2023-10-15</data_inizio>
+    <attivo>true</attivo>
+  </premio>
+</bonus>

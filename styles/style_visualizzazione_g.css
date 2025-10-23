@@ -94,6 +94,15 @@ h1 {
     width: 100%;
 }
 
+.main-container h2{
+    margin:6px 0 12px;
+    color:#000000;
+    font-size:1.9rem;
+    font-weight:bold;
+    text-align:center;        /* titolo centrato */
+    align-items: center;
+  }
+
 /* Wrapper per scroll orizzontale della tabella */
 .table-wrapper {
     overflow-x: auto;
@@ -221,7 +230,8 @@ footer {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 12px 10px;
+    padding: 10px 0;
+    position: relative;
     width: 100%;
     font-size: 0.8em;
     font-weight: bold;
@@ -229,6 +239,44 @@ footer {
     justify-content: center;
     box-sizing: border-box;
     margin-top: auto;
+}
+/* testo dei diritti centrato */
+footer p {
+  margin: 0;
+  text-align: center;
+  line-height: 1;
+}
+
+/* link "Chi siamo" fissato a destra, allineato verticalmente al centro del footer */
+footer .link_footer {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #f0ad4e;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* hover/focus styling per accessibilità */
+footer .link_footer:hover,
+footer .link_footer:focus {
+  text-decoration: underline;
+  color: #ffd18a;
+}
+
+/* su schermi stretti: link va sotto il testo e il layout diventa verticale */
+@media (max-width: 480px) {
+  footer {
+    flex-direction: column;
+    padding: 12px 16px;
+    justify-content: center;
+  }
+  footer .link_footer {
+    position: static;
+    transform: none;
+    margin-top: 8px;
+  }
 }
 
 /* Responsive */
@@ -245,6 +293,41 @@ footer {
         padding: 8px;
     }
 }
+
+/* ==================== FILTRO UTENTI (SEZIONE STORICO ACQUISTI) ==================== */
+.filter-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    background-color: rgba(185, 7, 7, 0.08);
+    border: 2px solid rgba(185, 7, 7, 0.25);
+    border-radius: 10px;
+    padding: 14px 30px;
+    width: fit-content;
+    margin: 8px auto 25px;   /* centra col margin auto */
+    align-self: center;       /* 🔥 centra nel flex container sotto al titolo */
+    transition: box-shadow 0.2s ease-in-out;
+  }
+  
+  .filter-form label {
+    font-weight: 700;
+    font-size: 1.1em;
+    color: rgb(123, 2, 2);
+    letter-spacing: 0.3px;
+  }
+  
+  .filter-form select {
+    font-size: 1em;
+    padding: 9px 14px;
+    border: 2px solid rgb(185, 7, 7);
+    border-radius: 6px;
+    background-color: #fffdf8;
+    color: #222;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+  }
 
 /* --- Immagine maglia responsive --- */
 .img-maglia {
@@ -267,3 +350,4 @@ footer {
     }
 
   }
+

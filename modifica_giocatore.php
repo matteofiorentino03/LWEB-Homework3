@@ -1,6 +1,34 @@
 <?php
 session_start();
-$homepage_link = "homepage_admin.php";
+
+/* ==========================
+    Controllo Accesso
+========================== */
+if (!isset($_SESSION['Username']) || !isset($_SESSION['Ruolo'])) {
+    header("Location: entering.html");
+    exit();
+}
+
+if (strtolower($_SESSION['Ruolo']) !== 'gestore') {
+    // Solo il Gestore può accedere
+    header("Location: entering.html");
+    exit();
+}
+
+/* ==========================
+    Logout
+========================== */
+if (isset($_GET['logout'])) {
+    session_unset();
+    session_destroy();
+    header("Location: entering.html");
+    exit();
+}
+
+/* ==========================
+   VARIABILI BASE
+========================== */
+$homepage_link = "homepage_gestore.php";
 $errore = '';
 $successo = '';
 
@@ -154,6 +182,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['update'])) {
     <?php endif; ?>
   </div>
 
-  <footer><p>&copy; 2025 Playerbase. Tutti i diritti riservati.</p></footer>
+  <footer>
+        <p>&copy; 2025 Playerbase. Tutti i diritti riservati. </p>
+        <a class="link_footer" href="contatti.php">Contatti, policy, privacy</a>
+    </footer>
 </body>
 </html>

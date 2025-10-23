@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<carrelli xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="carrelli.xsd">
+  <carrello>
+    <ID_utente>5</ID_utente>
+    <data_carrello>2025-10-20T17:28:16+02:00</data_carrello>
+    <articoli>
+      <articolo>
+        <ID_carrello>1</ID_carrello>
+        <tipo_maglia>Standard</tipo_maglia>
+        <ID_maglia>12</ID_maglia>
+        <prezzo_unitario>150.00</prezzo_unitario>
+        <percentuale_sconto>54.00</percentuale_sconto>
+        <prezzo_netto_riga>69.00</prezzo_netto_riga>
+        <supplemento>0.00</supplemento>
+        <bonus_previsto>0.00</bonus_previsto>
+        <sconto_utilizzato>ANZIANITA</sconto_utilizzato>
+        <sconto_utilizzato>TIPO_MAGLIA</sconto_utilizzato>
+        <taglia>XL</taglia>
+        <supplemento_personalizzazione>0.00</supplemento_personalizzazione>
+      </articolo>
+      <articolo>
+        <ID_carrello>2</ID_carrello>
+        <tipo_maglia>Standard</tipo_maglia>
+        <ID_maglia>9</ID_maglia>
+        <prezzo_unitario>150.00</prezzo_unitario>
+        <percentuale_sconto>30.00</percentuale_sconto>
+        <prezzo_netto_riga>105.00</prezzo_netto_riga>
+        <supplemento>0.00</supplemento>
+        <bonus_previsto>0.00</bonus_previsto>
+        <sconto_utilizzato>TIPO_MAGLIA</sconto_utilizzato>
+        <taglia>S</taglia>
+        <supplemento_personalizzazione>0.00</supplemento_personalizzazione>
+      </articolo>
+    </articoli>
+  </carrello>
+</carrelli>

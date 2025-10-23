@@ -23,9 +23,9 @@
   </richiesta>
   <richiesta>
     <ID>4</ID>
-    <user_id>4</user_id>
-    <importo>5000.00</importo>
+    <user_id>5</user_id>
+    <importo>500.00</importo>
     <stato>Approvata</stato>
-    <created_at>2025-09-23T17:04:19</created_at>
+    <created_at>2025-10-20T18:24:09</created_at>
   </richiesta>
 </crediti_richieste>

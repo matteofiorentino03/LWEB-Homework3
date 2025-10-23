@@ -143,18 +143,162 @@ h1 {
 .empty { text-align:center; color:#666; margin-top: 28px; }
 
 /* Footer */
-footer{
-  margin-top:auto; 
-  background:#333; 
-  color:#fff; 
-  text-align:center;
-  padding: 12px; 
-  font-size: 13px; 
-  font-weight: 600;
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+    font-size: 0.8em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    margin-top: auto;
+}
+/* testo dei diritti centrato */
+footer p {
+  margin: 0;
+  text-align: center;
+  line-height: 1;
+}
+
+/* link "Chi siamo" fissato a destra, allineato verticalmente al centro del footer */
+footer .link_footer {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #f0ad4e;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* hover/focus styling per accessibilità */
+footer .link_footer:hover,
+footer .link_footer:focus {
+  text-decoration: underline;
+  color: #ffd18a;
+}
+
+/* ===== FILTRI CATALOGO (NUOVA VERSIONE MIGLIORATA) ===== */
+.filter-form {
+  background: #fff;
+  padding: 18px 25px;
+  margin: 25px auto 35px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  max-width: 1100px;
+}
+
+.filter-group {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* Ogni blocco */
+.filter-item {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 160px;
+  min-width: 160px;
+}
+
+.filter-item label {
+  font-weight: bold;
+  color: rgb(134, 3, 3);
+  margin-bottom: 5px;
+  font-size: 0.95em;
+}
+
+.filter-item input,
+.filter-item select {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #bbb;
+  font-size: 0.95em;
+  transition: all 0.2s ease;
+}
+
+.filter-item input:focus,
+.filter-item select:focus {
+  outline: none;
+  border-color: rgb(185, 7, 7);
+  box-shadow: 0 0 5px rgba(185,7,7,0.3);
+}
+
+/* Pulsanti a destra */
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 0 0 auto;
+}
+
+.btn-filtra, .btn-reset {
+  background-color: rgb(185, 7, 7);
+  color: rgba(231, 179, 9, 0.9);
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  padding: 9px 16px;
+  font-size: 0.95em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-filtra:hover, .btn-reset:hover {
+  background-color: rgb(134, 3, 3);
+  color: #fff2b0;
+  transform: scale(1.04);
+}
+
+/* === Prezzo originale sbarrato quando c'è uno sconto === */
+.prezzo-originale {
+  color: #888;
+  text-decoration: line-through;
+  margin-right: 6px;
+}
+
+.prezzo-scontato {
+  color:rgb(185, 7, 7);
+  font-weight: 800;
+}
+
+/* Responsive layout */
+@media (max-width: 900px) {
+  .filter-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .filter-buttons {
+    justify-content: center;
+  }
+}
+
+/* su schermi stretti: link va sotto il testo e il layout diventa verticale */
+@media (max-width: 480px) {
+  footer {
+    flex-direction: column;
+    padding: 12px 16px;
+    justify-content: center;
+  }
+  footer .link_footer {
+    position: static;
+    transform: none;
+    margin-top: 8px;
+  }
 }
 
 /* Responsive tweak */
 @media (max-width: 640px){
   header { padding: 16px; }
   header h1 { font-size: 2em; }
+
 }

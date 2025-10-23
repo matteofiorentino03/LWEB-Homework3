@@ -1,11 +1,23 @@
 <?php
 session_start();
-if (!isset($_SESSION['Username'])) {
+
+/* ========================
+    Controllo Accesso
+======================== */
+if (!isset($_SESSION['Username']) || !isset($_SESSION['Ruolo'])) {
     header("Location: entering.html");
     exit();
 }
 
-/* Logout */
+if (strtolower($_SESSION['Ruolo']) !== 'gestore') {
+    // Se non è gestore → torna alla login
+    header("Location: entering.html");
+    exit();
+}
+
+/* ========================
+    Logout
+======================== */
 if (isset($_GET['logout'])) {
     session_unset();
     session_destroy();
@@ -13,10 +25,14 @@ if (isset($_GET['logout'])) {
     exit();
 }
 
+/* ========================
+   VARIABILI SESSIONE
+======================== */
+$username = $_SESSION['Username'];
+$ruolo = $_SESSION['Ruolo'];
+$homepage_link = 'homepage_gestore.php'; // homepage coerente
 $errore = "";
 $successo = "";
-$ruolo = $_SESSION['Ruolo'] ?? 'utente';
-$homepage_link = ($ruolo === 'admin') ? 'homepage_admin.php' : 'homepage_user.php';
 
 // Invio del form
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -159,6 +175,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   </div>
 </div>
 
-<footer><p>&copy; 2025 Playerbase. Tutti i diritti riservati.</p></footer>
+<footer>
+        <p>&copy; 2025 Playerbase. Tutti i diritti riservati. </p>
+        <a class="link_footer" href="contatti.php">Contatti, policy, privacy</a>
+    </footer>
 </body>
 </html>

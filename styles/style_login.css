@@ -119,3 +119,41 @@ footer {
     box-sizing: border-box;
     margin-top: auto;
 }
+/* testo dei diritti centrato */
+footer p {
+  margin: 0;
+  text-align: center;
+  line-height: 1;
+}
+
+/* link "Chi siamo" fissato a destra, allineato verticalmente al centro del footer */
+footer .link_footer {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #f0ad4e;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* hover/focus styling per accessibilità */
+footer .link_footer:hover,
+footer .link_footer:focus {
+  text-decoration: underline;
+  color: #ffd18a;
+}
+
+/* su schermi stretti: link va sotto il testo e il layout diventa verticale */
+@media (max-width: 480px) {
+  footer {
+    flex-direction: column;
+    padding: 12px 16px;
+    justify-content: center;
+  }
+  footer .link_footer {
+    position: static;
+    transform: none;
+    margin-top: 8px;
+  }
+}

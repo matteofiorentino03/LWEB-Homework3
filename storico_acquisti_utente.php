@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-/* Solo utente loggato */
 if (!isset($_SESSION['Username'])) {
     header("Location: entering.html");
     exit();
@@ -15,12 +14,9 @@ if (isset($_GET['logout'])) {
 }
 
 require_once __DIR__ . '/connect.php';
-try {
-    $conn = db();
-} catch (Throwable $e) {
-    die("Errore DB: " . $e->getMessage());
-}
+$conn = db();
 
+/* === DATI UTENTE === */
 $sqlUser = "SELECT ID, username FROM Utenti WHERE username = ?";
 $stmt = $conn->prepare($sqlUser);
 $stmt->bind_param("s", $_SESSION['Username']);
@@ -29,45 +25,35 @@ $user = $stmt->get_result()->fetch_assoc();
 $stmt->close();
 
 if (!$user) die("Utente non trovato.");
+
 $userId = (int)$user['ID'];
 $username = $user['username'];
-$homepage_link = (isset($_SESSION['Ruolo']) && strtolower($_SESSION['Ruolo']) === 'admin')
-    ? 'homepage_admin.php'
-    : 'homepage_user.php';
+$homepage_link = 'homepage_user.php';
 
-// === CARICA I FILE XML ===
-$xmlCompra = new DOMDocument();
-$xmlCompra->load("xml/compra.xml");
+/* === CARICAMENTO XML === */
+$xmlCompra = new DOMDocument(); $xmlCompra->load("xml/compra.xml");
+$xmlMaglie = new DOMDocument(); $xmlMaglie->load("xml/maglie.xml");
+$xmlPers = new DOMDocument(); $xmlPers->load("xml/maglie_personalizzate.xml");
+$xmlGioc = new DOMDocument(); $xmlGioc->load("xml/maglie_giocatore.xml");
+$xmlGiocatori = new DOMDocument(); $xmlGiocatori->load("xml/giocatori.xml");
 
-$xmlMaglie = new DOMDocument();
-$xmlMaglie->load("xml/maglie.xml");
-
-$xmlPers = new DOMDocument();
-$xmlPers->load("xml/maglie_personalizzate.xml");
-
-$xmlGioc = new DOMDocument();
-$xmlGioc->load("xml/maglie_giocatore.xml");
-
-$xmlGiocatori = new DOMDocument();
-$xmlGiocatori->load("xml/giocatori.xml");
-
-// === INDICIZZA I DATI ===
-function indicizzaPerID($xml, $tag, $idTag) {
-    $diz = [];
-    foreach ($xml->getElementsByTagName($tag) as $nodo) {
-        $id = $nodo->getElementsByTagName($idTag)[0]->nodeValue;
-        $diz[$id] = $nodo;
+/* === Funzione per trovare una maglia per ID === */
+function trovaMaglia($xmlMaglie, $id) {
+    foreach ($xmlMaglie->getElementsByTagName("maglia") as $m) {
+        if ($m->getElementsByTagName("ID")[0]->nodeValue == $id) {
+            return [
+                'tipo' => $m->getElementsByTagName("tipo")[0]->nodeValue ?? '',
+                'stagione' => $m->getElementsByTagName("stagione")[0]->nodeValue ?? '',
+                'taglia' => $m->getElementsByTagName("taglia")[0]->nodeValue ?? '',
+            ];
+        }
     }
-    return $diz;
+    return null;
 }
 
-$maglie = indicizzaPerID($xmlMaglie, 'maglia', 'ID');
-$pers = indicizzaPerID($xmlPers, 'maglia', 'ID');
-$gioc = $xmlGioc->getElementsByTagName("personalizzazione");
-$giocatori = indicizzaPerID($xmlGiocatori, 'giocatore', 'ID');
-
-// === ESTRAI ORDINI UTENTE ===
+/* === COSTRUISCI LISTA ACQUISTI === */
 $acquisti = [];
+
 foreach ($xmlCompra->getElementsByTagName("ordine") as $ordine) {
     $idUtente = $ordine->getElementsByTagName("ID_Utente")[0]->nodeValue;
     if ((int)$idUtente !== $userId) continue;
@@ -75,53 +61,51 @@ foreach ($xmlCompra->getElementsByTagName("ordine") as $ordine) {
     $idOrdine = $ordine->getElementsByTagName("ID")[0]->nodeValue;
     $idMaglia = $ordine->getElementsByTagName("ID_Maglia")[0]->nodeValue;
     $pagamento = $ordine->getElementsByTagName("pagamento_finale")[0]->nodeValue ?? 0;
-    $indirizzo = $ordine->getElementsByTagName("indirizzo_consegna")[0]->nodeValue;
-    $data = $ordine->getElementsByTagName("data_compra")[0]->nodeValue;
+    $indirizzo = $ordine->getElementsByTagName("indirizzo_consegna")[0]->nodeValue ?? '';
+    $data = $ordine->getElementsByTagName("data_compra")[0]->nodeValue ?? '';
 
-    $maglia = $maglie[$idMaglia] ?? null;
+    // Trova maglia base
+    $maglia = trovaMaglia($xmlMaglie, $idMaglia);
     if (!$maglia) continue;
 
-    $tipo = $maglia->getElementsByTagName("tipo")[0]->nodeValue;
-    $stagione = $maglia->getElementsByTagName("stagione")[0]->nodeValue;
-    $taglia = $maglia->getElementsByTagName("taglia")[0]->nodeValue;
+    $descrizione = "{$maglia['tipo']} • {$maglia['stagione']} • {$maglia['taglia']}";
 
-    // CONTROLLA se è personalizzata
-    $pers_item = null;
-    foreach ($pers as $p) {
-        $id_m = $p->getElementsByTagName("ID_Maglia")[0]->nodeValue;
-        if ($id_m == $idMaglia) {
-            $pers_item = $p;
-            break;
+    /* --- Se è una maglia personalizzata --- */
+    $isPersonalizzata = false;
+    foreach ($xmlPers->getElementsByTagName("maglia") as $p) {
+        $idPers = $p->getElementsByTagName("ID")[0]->nodeValue ?? '';
+        if ($idPers == $idOrdine) {
+            $nome = $p->getElementsByTagName("nome")->length ? $p->getElementsByTagName("nome")[0]->nodeValue : '';
+            $num = $p->getElementsByTagName("num_maglia")->length ? $p->getElementsByTagName("num_maglia")[0]->nodeValue : '';
+            $logo = $p->getElementsByTagName("Logo")->length ? $p->getElementsByTagName("Logo")[0]->nodeValue : '';
+
+            if ($logo) $descrizione .= " • $logo";
+            if ($nome || $num) $descrizione .= " • Personalizzata: $nome #$num";
+            $isPersonalizzata = true;
+            break; // evita che venga letta anche come maglia giocatore
         }
     }
 
-    // CONTROLLA se è maglia giocatore
-    $gioc_item = null;
-    foreach ($gioc as $g) {
-        $id_m = $g->getElementsByTagName("ID_Maglia")[0]->nodeValue;
-        if ($id_m == $idMaglia) {
-            $gioc_item = $g;
-            break;
-        }
-    }
+    /* --- Se è una maglia giocatore --- */
+    if (!$isPersonalizzata) {
+        foreach ($xmlGioc->getElementsByTagName("personalizzazione") as $p) {
+            $idPers = $p->getElementsByTagName("ID")[0]->nodeValue ?? '';
+            if ($idPers == $idOrdine) {
+                $idG = $p->getElementsByTagName("ID_Giocatore")[0]->nodeValue ?? '';
+                $logo = $p->getElementsByTagName("Logo")->length ? $p->getElementsByTagName("Logo")[0]->nodeValue : '';
+                if ($logo) $descrizione .= " • $logo";
 
-    $descrizione = "$tipo • $stagione • $taglia";
-    if ($pers_item) {
-        $logo = $pers_item->getElementsByTagName("Logo")->length
-              ? $pers_item->getElementsByTagName("Logo")[0]->nodeValue
-              : '';
-        $nome = $pers_item->getElementsByTagName("nome")[0]->nodeValue ?? '';
-        $num = $pers_item->getElementsByTagName("num_maglia")[0]->nodeValue ?? '';
-        $descrizione .= ($logo ? " • $logo" : "") . " • Personalizzata: $nome #$num";
-    } elseif ($gioc_item) {
-        $logo = $gioc_item->getElementsByTagName("Logo")->length
-              ? $gioc_item->getElementsByTagName("Logo")[0]->nodeValue
-              : '';
-        $id_gioc = $gioc_item->getElementsByTagName("ID_Giocatore")[0]->nodeValue;
-        $g = $giocatori[$id_gioc] ?? null;
-        $nome = $g ? $g->getElementsByTagName("nome")[0]->nodeValue : '';
-        $cognome = $g ? $g->getElementsByTagName("cognome")[0]->nodeValue : '';
-        $descrizione .= ($logo ? " • $logo" : "") . " • $nome $cognome";
+                foreach ($xmlGiocatori->getElementsByTagName("giocatore") as $g) {
+                    if ($g->getElementsByTagName("ID")[0]->nodeValue == $idG) {
+                        $nome = $g->getElementsByTagName("nome")[0]->nodeValue;
+                        $cognome = $g->getElementsByTagName("cognome")[0]->nodeValue;
+                        $descrizione .= " • $cognome $nome";
+                        break;
+                    }
+                }
+                break;
+            }
+        }
     }
 
     $acquisti[] = [
@@ -132,14 +116,15 @@ foreach ($xmlCompra->getElementsByTagName("ordine") as $ordine) {
         'data' => $data
     ];
 }
-usort($acquisti, fn($a, $b) => strcmp($b['data'], $a['data']) ?: $b['id'] - $a['id']);
+
+/* === Ordina per data più recente === */
+usort($acquisti, fn($a, $b) => strcmp($b['data'], $a['data']));
 ?>
 <!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <title>I miei acquisti</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I miei acquisti — Playerbase</title>
   <link rel="stylesheet" href="styles/style_storico_acquisti_u.css">
 </head>
 <body>
@@ -150,14 +135,14 @@ usort($acquisti, fn($a, $b) => strcmp($b['data'], $a['data']) ?: $b['id'] - $a['
     </div>
   </a>
   <h1><a href="<?= htmlspecialchars($homepage_link) ?>" style="color:inherit;text-decoration:none;">PLAYERBASE</a></h1>
-  <div class="utente-container">
-      <div class="logout"><a href="?logout=true"><p>Logout</p></a></div>
-  </div>
+  <div class="utente-container"><div class="logout"><a href="?logout=true">Logout</a></div></div>
 </header>
 
-<div class="main-container">
-  <h2>I miei acquisti</h2>
+<main class="main-container">
+  <h2>Storico acquisti</h2>
+
   <div class="table-wrapper">
+    <?php if ($acquisti): ?>
     <table>
       <thead>
         <tr>
@@ -169,28 +154,30 @@ usort($acquisti, fn($a, $b) => strcmp($b['data'], $a['data']) ?: $b['id'] - $a['
         </tr>
       </thead>
       <tbody>
-      <?php if (count($acquisti)): ?>
-        <?php foreach ($acquisti as $r): ?>
-          <tr>
-            <td><?= htmlspecialchars($r['descrizione']) ?></td>
-            <td><?= $r['pagamento'] ?></td>
-            <td><?= htmlspecialchars($r['indirizzo']) ?></td>
-            <td><?= htmlspecialchars($r['data']) ?></td>
-            <td>
-              <a class="btn-print" href="stampa_ordine.php?id=<?= (int)$r['id'] ?>" target="_blank">Stampa PDF</a>
-            </td>
-          </tr>
+        <?php foreach ($acquisti as $a): ?>
+        <tr>
+          <td><?= htmlspecialchars($a['descrizione']) ?></td>
+          <td><?= htmlspecialchars($a['pagamento']) ?></td>
+          <td><?= htmlspecialchars($a['indirizzo']) ?></td>
+          <td><?= htmlspecialchars($a['data']) ?></td>
+          <td>
+            <a class="btn-print" href="stampa_ordine.php?id=<?= (int)$a['id'] ?>" target="_blank">
+              Stampa PDF
+            </a>
+          </td>
+        </tr>
         <?php endforeach; ?>
-      <?php else: ?>
-        <tr><td colspan="5" style="text-align:center;color:#666;font-style:italic;">Nessun acquisto effettuato.</td></tr>
-      <?php endif; ?>
       </tbody>
     </table>
+    <?php else: ?>
+      <p style="text-align:center;">Nessun acquisto effettuato.</p>
+    <?php endif; ?>
   </div>
-</div>
+</main>
 
 <footer>
   <p>&copy; 2025 Playerbase. Tutti i diritti riservati.</p>
+  <a class="link_footer" href="contatti.php">Contatti, policy, privacy</a>
 </footer>
 </body>
 </html>

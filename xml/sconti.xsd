@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!-- Tipo enumerato per tutti i tipi di sconto -->
+  <xs:simpleType name="TipoScontoType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FEDELISSIMO"/>
+      <xs:enumeration value="BENVENUTOLUPETTO"/>
+      <xs:enumeration value="RETRO"/>
+      <xs:enumeration value="REPUTAZIONE"/>
+      <xs:enumeration value="ANZIANITA"/>
+      <xs:enumeration value="TIPO_MAGLIA"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Tipo enumerato per maglia -->
+  <xs:simpleType name="TipoMagliaType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CASA"/>
+      <xs:enumeration value="FUORI"/>
+      <xs:enumeration value="TERZA"/>
+      <xs:enumeration value="PORTIERE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Radice -->
+  <xs:element name="sconti">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="sconto" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" type="xs:int"/>
+              <xs:element name="tipo" type="TipoScontoType"/>
+              <xs:element name="nome" type="xs:string"/>
+              <xs:element name="attivo" type="xs:boolean"/>
+              <xs:element name="data_inizio" type="xs:date" minOccurs="0"/>
+              <xs:element name="data_fine" type="xs:date" minOccurs="0"/>
+              <xs:element name="percentualeFissa" type="xs:decimal" minOccurs="0"/>
+              <xs:element name="percentualeMax" type="xs:decimal" minOccurs="0"/>
+              <xs:element name="sogliaCreditiStep" type="xs:int" minOccurs="0"/>
+              <xs:element name="patternCodice" type="xs:string" minOccurs="0"/>
+              <!-- Condizioni opzionali -->
+              <xs:element name="condizioniMaglia" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="stagione" type="xs:string" maxOccurs="unbounded" minOccurs="0"/>
+                    <xs:element name="tipo" type="TipoMagliaType" maxOccurs="3" minOccurs="0"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <!-- Campi specifici reputazione -->
+              <xs:element name="scontoReputazione" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="soglia" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="maxReputazione" type="xs:int"/>
+                          <xs:element name="percentualeSconto" type="xs:decimal"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <!-- Campi specifici anzianità -->
+              <xs:element name="periodoMensilita" type="xs:decimal" minOccurs="0"/>
+              <xs:element name="incrementoPercentuale" type="xs:decimal" minOccurs="0"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

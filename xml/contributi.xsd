@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+  <xs:simpleType name="TipoContributo">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Domanda"/>
+      <xs:enumeration value="Risposta"/>
+      <xs:enumeration value="Recensione"/>
+      <xs:enumeration value="Intervento"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="StatoContributo">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Normale"/>
+      <xs:enumeration value="Elevato"/>
+      <xs:enumeration value="Non idoneo alle policy"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="RuoloType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Cliente"/>
+      <xs:enumeration value="Gestore"/>
+      <xs:enumeration value="Amministratore"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="LivelloReputazione">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BASSA"/>
+      <xs:enumeration value="MEDIA"/>
+      <xs:enumeration value="ALTA"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+
+  <xs:element name="contributi">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="contributo" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Tipo" type="TipoContributo"/>
+              <xs:element name="Titolo" type="xs:string" minOccurs="0"/>
+              <xs:element name="Testo" type="xs:string"/>
+              <xs:element name="Autore">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Username" type="xs:string"/>
+                    <xs:element name="Ruolo" type="RuoloType"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+
+
+              <xs:element name="RifContributoID" type="xs:integer" minOccurs="0"/>
+
+
+              <xs:element name="Giudizi" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Giudizio" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Utente" type="xs:string"/>
+                          <xs:element name="Reputazione" type="LivelloReputazione"/>
+                          <xs:element name="Utilita" type="xs:integer"/>
+                          <xs:element name="Supporto" type="xs:integer"/>
+                        </xs:sequence>
+                        <xs:attribute name="data" type="xs:date" use="optional"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+
+              <xs:element name="Stato" type="StatoContributo"/>
+            </xs:sequence>
+            <xs:attribute name="ID" type="xs:integer" use="required"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

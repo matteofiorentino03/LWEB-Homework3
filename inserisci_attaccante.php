@@ -1,13 +1,36 @@
 <?php
 session_start();
-if (!isset($_SESSION['Username'])) {
+
+/* ==========================
+    Controllo Accesso
+========================== */
+if (!isset($_SESSION['Username']) || !isset($_SESSION['Ruolo'])) {
     header("Location: entering.html");
     exit();
 }
 
-$ruoloUtente = $_SESSION['Ruolo'];
-$homepage_link = ($ruoloUtente === 'admin') ? 'homepage_admin.php' : 'homepage_user.php';
+if (strtolower($_SESSION['Ruolo']) !== 'gestore') {
+    // Solo i gestori possono accedere
+    header("Location: entering.html");
+    exit();
+}
 
+/* ==========================
+    Logout
+========================== */
+if (isset($_GET['logout'])) {
+    session_unset();
+    session_destroy();
+    header("Location: entering.html");
+    exit();
+}
+
+/* ==========================
+   VARIABILI BASE
+========================== */
+$ruoloUtente = $_SESSION['Ruolo'];
+$username = $_SESSION['Username'];
+$homepage_link = 'homepage_gestore.php';
 $id_giocatore = $_GET['id'] ?? null;
 $errore = "";
 $successo = "";
@@ -60,6 +83,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $successo = "Dati dell'attaccante inseriti correttamente.";
     }
+    echo "<script>
+                alert('Giocatore inserito con successo!');
+                window.location.href = 'homepage_gestore.php';
+              </script>";
+    exit();
 }
 ?>
 
@@ -108,7 +136,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 
     <footer>
-        <p>&copy; 2025 Playerbase. Tutti i diritti riservati.</p>
+        <p>&copy; 2025 Playerbase. Tutti i diritti riservati. </p>
+        <a class="link_footer" href="contatti.php">Contatti, policy, privacy</a>
     </footer>
 </body>
 </html>

@@ -1,6 +1,25 @@
 <?php
 session_start();
 
+/* ==========================
+    CONTROLLO ACCESSO
+========================== */
+if (!isset($_SESSION['Username']) || !isset($_SESSION['Ruolo'])) {
+    header("Location: entering.html");
+    exit();
+}
+
+$ruolo = strtolower($_SESSION['Ruolo']);
+
+// Solo Gestore o Cliente
+if ($ruolo !== 'gestore' && $ruolo !== 'cliente') {
+    header("Location: entering.html");
+    exit();
+}
+
+/* ==========================
+    LOGOUT
+========================== */
 if (isset($_GET['logout'])) {
     session_unset();
     session_destroy();
@@ -8,14 +27,10 @@ if (isset($_GET['logout'])) {
     exit();
 }
 
-if (!isset($_SESSION['Username'])) {
-    header("Location: entering.html");
-    exit();
-}
-
-$username = $_SESSION['Username'];
-$ruolo = $_SESSION['Ruolo'];
-$homepage_link = ($ruolo === 'admin') ? 'homepage_admin.php' : 'homepage_user.php';
+/* ==========================
+   HOMEPAGE LINK
+========================== */
+$homepage_link = ($ruolo === 'gestore') ? 'homepage_gestore.php' : 'homepage_user.php';
 
 // Carica il file XML delle maglie
 $maglie_xml = file_exists("xml/maglie.xml") ? simplexml_load_file("xml/maglie.xml") : null;
@@ -87,9 +102,9 @@ $maglie_xml = file_exists("xml/maglie.xml") ? simplexml_load_file("xml/maglie.xm
 </div>
 
 <footer>
-  <p>&copy; 2025 Playerbase. Tutti i diritti riservati.</p>
-</footer>
-
+        <p>&copy; 2025 Playerbase. Tutti i diritti riservati. </p>
+        <a class="link_footer" href="contatti.php">Contatti, policy, privacy</a>
+    </footer>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const wrapper = document.querySelector('.table-wrapper');

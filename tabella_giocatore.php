@@ -1,18 +1,20 @@
 <?php
 session_start();
 
-/* Stato sessione */
-$is_logged = isset($_SESSION['Username']);
-$ruolo     = $is_logged && isset($_SESSION['Ruolo']) ? strtolower($_SESSION['Ruolo']) : null;
-$is_admin  = ($ruolo === 'admin');
+/* ==========================
+    CONTROLLO ACCESSO
+========================== */
+$ruolo = isset($_SESSION['Ruolo']) ? strtolower($_SESSION['Ruolo']) : null;
 
-if ($ruolo === 'admin' && !$is_logged) {
+// Se è Amministratore → blocco accesso
+if ($ruolo === 'amministratore') {
     header("Location: entering.html");
     exit();
 }
 
-$homepage_link = ($is_admin ? 'homepage_admin.php' : 'homepage_user.php');
-
+/* ==========================
+    LOGOUT
+========================== */
 if (isset($_GET['logout'])) {
     session_unset();
     session_destroy();
@@ -20,18 +22,38 @@ if (isset($_GET['logout'])) {
     exit();
 }
 
-// Carica XML
+/* ==========================
+   HOMEPAGE LINK (secondo ruolo)
+========================== */
+$is_logged = isset($_SESSION['Username']);
+
+if ($is_logged && $ruolo === 'gestore') {
+    $homepage_link = 'homepage_gestore.php';
+} else {
+    // Tutti gli altri (non loggati o clienti)
+    $homepage_link = 'homepage_user.php';
+}
+
+
+/* ==========================
+    FUNZIONE PER CARICARE XML
+========================== */
 function loadXml($path) {
     return file_exists($path) ? simplexml_load_file($path) : null;
 }
 
-$giocatori_xml     = loadXml("xml/giocatori.xml");
-$portieri_xml      = loadXml("xml/portieri.xml");
-$difensori_xml     = loadXml("xml/difensori.xml");
-$centrocampisti_xml= loadXml("xml/centrocampisti.xml");
-$attaccanti_xml    = loadXml("xml/attaccanti.xml");
+/* ==========================
+    CARICAMENTO DEI FILE XML
+========================== */
+$giocatori_xml      = loadXml("xml/giocatori.xml");
+$portieri_xml       = loadXml("xml/portieri.xml");
+$difensori_xml      = loadXml("xml/difensori.xml");
+$centrocampisti_xml = loadXml("xml/centrocampisti.xml");
+$attaccanti_xml     = loadXml("xml/attaccanti.xml");
 
-// Funzione per trovare il ruolo + stats
+/* ==========================
+    FUNZIONE: RUOLO + STATISTICHE
+========================== */
 function getRuoloEStatistiche($id) {
     global $portieri_xml, $difensori_xml, $centrocampisti_xml, $attaccanti_xml;
 
@@ -180,7 +202,8 @@ function getRuoloEStatistiche($id) {
 </div>
 
 <footer>
-  <p>&copy; 2025 Playerbase. Tutti i diritti riservati.</p>
+  <p>&copy; 2025 Playerbase. Tutti i diritti riservati. </p>
+  <a class="link_footer" href="contatti.php">Contatti, policy, privacy</a>
 </footer>
 
 <script>

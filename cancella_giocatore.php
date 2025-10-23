@@ -1,11 +1,14 @@
 <?php
 session_start();
+require_once __DIR__ . '/connect.php';
 
-if (!isset($_SESSION['Username']) || ($_SESSION['Ruolo'] ?? '') !== 'admin') {
+//  Controllo ruolo: solo "Gestore"
+if (!isset($_SESSION['Username']) || strtolower($_SESSION['Ruolo'] ?? '') !== 'gestore') {
     header("Location: entering.html");
     exit();
 }
 
+//  Logout
 if (isset($_GET['logout'])) {
     session_unset();
     session_destroy();
@@ -16,6 +19,9 @@ if (isset($_GET['logout'])) {
 $errore = "";
 $successo = "";
 $giocatori = [];
+
+//  Homepage coerente con il ruolo
+$homepage_link = 'homepage_gestore.php';
 
 // Caricamento giocatori da giocatori.xml
 $giocatoriXML = simplexml_load_file("xml/giocatori.xml");
@@ -50,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['ID']) && $_POST['ID']
     if ($found) {
         $dom->save("xml/giocatori.xml");
 
-        // Elimina anche dalle statistiche del ruolo
+        // Elimina anche dalle statistiche dei ruoli
         $ruoli = [
             'portieri.xml' => 'portiere',
             'difensori.xml' => 'difensore',
@@ -96,8 +102,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['ID']) && $_POST['ID']
         ];
     }
 }
-
-$homepage_link = 'homepage_admin.php';
 ?>
 <!DOCTYPE html>
 <html lang="it">
@@ -149,8 +153,9 @@ $homepage_link = 'homepage_admin.php';
 </main>
 
 <footer>
-    <p>&copy; 2025 Playerbase. Tutti i diritti riservati.</p>
-</footer>
+        <p>&copy; 2025 Playerbase. Tutti i diritti riservati. </p>
+        <a class="link_footer" href="contatti.php">Contatti, policy, privacy</a>
+    </footer>
 
 <script>
 function confermaEliminazione() {

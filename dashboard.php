@@ -1,6 +1,13 @@
 <?php
 session_start();
+require_once __DIR__ . '/connect.php';
 
+/* ==========================
+   Controllo Accesso
+   Solo Amministratore o Gestore
+========================== */
+
+// Logout
 if (isset($_GET['logout'])) {
     session_unset();
     session_destroy();
@@ -8,30 +15,43 @@ if (isset($_GET['logout'])) {
     exit();
 }
 
-if (!isset($_SESSION['Username'])) {
+// Controllo login e ruolo
+if (!isset($_SESSION['Username']) || !isset($_SESSION['Ruolo'])) {
     header("Location: entering.html");
     exit();
 }
 
-$homepage_link = 'homepage_admin.php';
+$ruolo = strtolower(trim($_SESSION['Ruolo']));
 
-// Connessione al database (usa il nome corretto del tuo DB)
+// Solo "amministratore" o "gestore" sono ammessi
+if ($ruolo !== 'amministratore' && $ruolo !== 'gestore') {
+    header("Location: entering.html");
+    exit();
+}
+
+/* Homepage coerente al ruolo */
+$homepage_link = ($ruolo === 'amministratore') 
+    ? 'homepage_admin.php' 
+    : 'homepage_gestore.php';
+
+/* ==========================
+   Connessione al database
+========================== */
 $servername  = "localhost";
 $username_db = "root";
 $password_db = "";
-$dbname      = "playerbase2"; // <-- cambia in "playerbase" se serve
-
-/* ================= DB ================= */
-require_once __DIR__ . '/connect.php';
+$dbname      = "pbdef";
 
 try {
-    $conn = db();   // usa la funzione definita in connect.php
+    $conn = db(); // Usa la funzione definita in connect.php
 } catch (Throwable $e) {
     die("Errore DB: " . $e->getMessage());
 }
 
-/* Preleva i dati dalla tabella Utenti */
-$sql = "SELECT ID, cf, username, Password_Utente, ruolo, crediti, status
+/* ==========================
+   Query Utenti
+========================== */
+$sql = "SELECT ID, cf, username, Password_Utente, ruolo, crediti, reputazione, status
         FROM Utenti
         ORDER BY ruolo DESC, username ASC";
 $result = $conn->query($sql);
@@ -83,6 +103,7 @@ function badge_class($status) {
                     <th>Username</th>
                     <th>Password Utente</th>
                     <th>Crediti</th>
+                    <th>Reputazione</th>
                     <th>Status</th>
                 </tr>
             </thead>
@@ -95,6 +116,7 @@ function badge_class($status) {
                     $pwd      = htmlspecialchars($row['Password_Utente']);
                     $crediti  = is_null($row['crediti']) ? '—' : htmlspecialchars($row['crediti']);
                     $status   = htmlspecialchars($row['status']);
+                    $reputazione = is_null($row['reputazione']) ? '—' : htmlspecialchars($row['reputazione']);
                     $badgeCls = badge_class($row['status']);
                 ?>
                 <tr>
@@ -103,6 +125,7 @@ function badge_class($status) {
                     <td><?php echo $user; ?></td>
                     <td><?php echo $pwd; ?></td>
                     <td><?php echo $crediti; ?></td>
+                    <td><?php echo $reputazione; ?></td>
                     <td><span class="badge <?php echo $badgeCls; ?>"><?php echo strtoupper($status ?: '—'); ?></span></td>
                 </tr>
             <?php endwhile; ?>
@@ -116,7 +139,8 @@ function badge_class($status) {
 </div>
 
 <footer>
-    <p>&copy; 2025 Playerbase. Tutti i diritti riservati.</p>
-</footer>
+        <p>&copy; 2025 Playerbase. Tutti i diritti riservati. </p>
+        <a class="link_footer" href="contatti.php">Contatti, policy, privacy</a>
+    </footer>
 </body>
 </html>

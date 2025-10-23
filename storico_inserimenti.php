@@ -1,11 +1,23 @@
 <?php
 session_start();
 
-// Login check
-if (!isset($_SESSION['Username'])) {
+/* ==========================
+    CONTROLLO ACCESSO
+========================== */
+if (!isset($_SESSION['Username']) || !isset($_SESSION['Ruolo'])) {
     header("Location: entering.html");
     exit();
 }
+
+if (strtolower($_SESSION['Ruolo']) !== 'gestore') {
+    // Solo i Gestori possono accedere
+    header("Location: entering.html");
+    exit();
+}
+
+/* ==========================
+    LOGOUT
+========================== */
 if (isset($_GET['logout'])) {
     session_unset();
     session_destroy();
@@ -13,8 +25,8 @@ if (isset($_GET['logout'])) {
     exit();
 }
 
-$ruolo = $_SESSION['Ruolo'] ?? 'utente';
-$homepage_link = ($ruolo === 'admin') ? 'homepage_admin.php' : 'homepage_user.php';
+$ruolo = $_SESSION['Ruolo'];
+$homepage_link = 'homepage_gestore.php';
 
 require_once __DIR__ . '/connect.php';
 
@@ -163,7 +175,8 @@ foreach ($lista_maglie as $maglia) {
 </main>
 
 <footer>
-  <p>&copy; 2025 Playerbase. Tutti i diritti riservati.</p>
-</footer>
+        <p>&copy; 2025 Playerbase. Tutti i diritti riservati. </p>
+        <a class="link_footer" href="contatti.php">Contatti, policy, privacy</a>
+    </footer>
 </body>
 </html>

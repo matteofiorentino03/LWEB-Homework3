@@ -8,8 +8,8 @@ if (!isset($_SESSION['Username'])) {
 }
 
 $loggedUser = $_SESSION['Username'];
-$ruolo = isset($_SESSION['Ruolo']) ? strtolower($_SESSION['Ruolo']) : null;
-$isAdmin = ($ruolo === 'admin');
+$ruolo = strtolower($_SESSION['Ruolo'] ?? '');
+$isAdmin = ($ruolo === 'amministratore');
 
 /* ==== ID ordine ==== */
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
@@ -17,13 +17,9 @@ if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
 }
 $ordineId = (int)$_GET['id'];
 
-/* ==== Connessione DB (per recuperare username) ==== */
+/* ==== Connessione DB ==== */
 require_once __DIR__ . '/connect.php';
-try {
-    $conn = db();
-} catch (Throwable $e) {
-    die("Errore DB: " . $e->getMessage());
-}
+$conn = db();
 
 /* ==== Carica XML ==== */
 $compra     = new DOMDocument();
@@ -43,19 +39,18 @@ $xpath = new DOMXPath($compra);
 $ordineNode = $xpath->query("//ordine[ID = $ordineId]")->item(0);
 if (!$ordineNode) die("Ordine non trovato.");
 
-$idUtente = (int)$ordineNode->getElementsByTagName("ID_Utente")->item(0)->nodeValue;
-$idMaglia = (int)$ordineNode->getElementsByTagName("ID_Maglia")->item(0)->nodeValue;
-$pagamentoFinale = (float)($ordineNode->getElementsByTagName("pagamento_finale")->item(0)->nodeValue ?? 0);
-$indirizzo = $ordineNode->getElementsByTagName("indirizzo_consegna")->item(0)->nodeValue;
-$data = $ordineNode->getElementsByTagName("data_compra")->item(0)->nodeValue;
+$idUtente = (int)($ordineNode->getElementsByTagName("ID_Utente")->item(0)?->nodeValue ?? 0);
+$idMaglia = (int)($ordineNode->getElementsByTagName("ID_Maglia")->item(0)?->nodeValue ?? 0);
+$pagamentoFinale = (float)($ordineNode->getElementsByTagName("pagamento_finale")->item(0)?->nodeValue ?? 0);
+$indirizzo = $ordineNode->getElementsByTagName("indirizzo_consegna")->item(0)?->nodeValue ?? '';
+$data = $ordineNode->getElementsByTagName("data_compra")->item(0)?->nodeValue ?? '';
 
-/* ==== Recupera username da SQL ==== */
+/* ==== Recupera username ==== */
 $stmt = $conn->prepare("SELECT username FROM utenti WHERE id = ?");
 $stmt->bind_param("i", $idUtente);
 $stmt->execute();
-$result = $stmt->get_result();
-$row = $result->fetch_assoc();
-$username = $row['username'] ?? null;
+$row = $stmt->get_result()->fetch_assoc();
+$username = $row['username'] ?? 'Sconosciuto';
 $stmt->close();
 
 if (!$isAdmin && $username !== $loggedUser) {
@@ -63,34 +58,34 @@ if (!$isAdmin && $username !== $loggedUser) {
     die("Non sei autorizzato a visualizzare questo ordine.");
 }
 
-/* ==== Ricava info maglia ==== */
+/* ==== Info maglia ==== */
 $xpathMaglia = new DOMXPath($maglie);
 $mnode = $xpathMaglia->query("//maglia[ID = $idMaglia]")->item(0);
 if (!$mnode) die("Maglia non trovata.");
 
-$tipo     = $mnode->getElementsByTagName("tipo")->item(0)->nodeValue;
-$stagione = $mnode->getElementsByTagName("stagione")->item(0)->nodeValue;
-$taglia   = $mnode->getElementsByTagName("taglia")->item(0)->nodeValue;
-$costo    = (float)$mnode->getElementsByTagName("costo_fisso")->item(0)->nodeValue;
+$tipo     = $mnode->getElementsByTagName("tipo")->item(0)?->nodeValue ?? '';
+$stagione = $mnode->getElementsByTagName("stagione")->item(0)?->nodeValue ?? '';
+$taglia   = $mnode->getElementsByTagName("taglia")->item(0)?->nodeValue ?? '';
+$costo    = (float)($mnode->getElementsByTagName("costo_fisso")->item(0)?->nodeValue ?? 0);
 
-/* ==== Prova a trovare personalizzazione ==== */
-$logo = $supp = $persNome = $persNum = $nomeG = $cognomeG = "";
+/* ==== Cerca personalizzazioni ==== */
+$logo = $persNome = $persNum = $nomeG = $cognomeG = "";
+$supp = 0;
 $trovata = false;
 
-/* Maglie Giocatore */
+/* --- Maglia Giocatore --- */
 foreach ($maglieGioc->getElementsByTagName("personalizzazione") as $p) {
-    $idMagliaGioc = (int)$p->getElementsByTagName("ID_Maglia")->item(0)->nodeValue;
+    $idMagliaGioc = (int)($p->getElementsByTagName("ID_Maglia")->item(0)?->nodeValue ?? 0);
     if ($idMagliaGioc === $idMaglia) {
-        $supp = (float)$p->getElementsByTagName("Supplemento")->item(0)->nodeValue;
-        $logo = $p->getElementsByTagName("Logo")->item(0)->nodeValue ?? "";
-        $idGioc = (int)$p->getElementsByTagName("ID_Giocatore")->item(0)->nodeValue;
+        $supp = (float)($p->getElementsByTagName("Supplemento")->item(0)?->nodeValue ?? 0);
+        $logo = $p->getElementsByTagName("Logo")->item(0)?->nodeValue ?? "";
+        $idGioc = (int)($p->getElementsByTagName("ID_Giocatore")->item(0)?->nodeValue ?? 0);
 
-        // Nome Giocatore
         foreach ($giocatori->getElementsByTagName("giocatore") as $g) {
-            $gid = (int)$g->getElementsByTagName("ID")->item(0)->nodeValue;
+            $gid = (int)($g->getElementsByTagName("ID")->item(0)?->nodeValue ?? 0);
             if ($gid === $idGioc) {
-                $nomeG = $g->getElementsByTagName("nome")->item(0)->nodeValue;
-                $cognomeG = $g->getElementsByTagName("cognome")->item(0)->nodeValue;
+                $nomeG = $g->getElementsByTagName("nome")->item(0)?->nodeValue ?? '';
+                $cognomeG = $g->getElementsByTagName("cognome")->item(0)?->nodeValue ?? '';
                 break;
             }
         }
@@ -99,15 +94,15 @@ foreach ($maglieGioc->getElementsByTagName("personalizzazione") as $p) {
     }
 }
 
-/* Maglie Personalizzate */
+/* --- Maglia Personalizzata --- */
 if (!$trovata) {
     foreach ($magliePers->getElementsByTagName("maglia") as $p) {
-        $idMagliaPers = (int)$p->getElementsByTagName("ID_Maglia")->item(0)->nodeValue;
+        $idMagliaPers = (int)($p->getElementsByTagName("ID_Maglia")->item(0)?->nodeValue ?? 0);
         if ($idMagliaPers === $idMaglia) {
-            $supp = (float)$p->getElementsByTagName("supplemento")->item(0)->nodeValue;
-            $logo = $p->getElementsByTagName("Logo")->item(0)->nodeValue ?? "";
-            $persNome = $p->getElementsByTagName("nome")->item(0)->nodeValue;
-            $persNum  = $p->getElementsByTagName("num_maglia")->item(0)->nodeValue;
+            $supp = (float)($p->getElementsByTagName("supplemento")->item(0)?->nodeValue ?? 0);
+            $logo = $p->getElementsByTagName("Logo")->item(0)?->nodeValue ?? "";
+            $persNome = $p->getElementsByTagName("nome")->item(0)?->nodeValue ?? '';
+            $persNum  = $p->getElementsByTagName("num_maglia")->item(0)?->nodeValue ?? '';
             break;
         }
     }
@@ -157,8 +152,9 @@ if ($persNome) {
     </div>
   </div>
 
-  <footer class="no-print">
-    <p>&copy; 2025 Playerbase - Tutti i diritti riservati</p>
+  <footer>
+    <p>&copy; 2025 Playerbase. Tutti i diritti riservati. </p>
+    <a class="link_footer" href="contatti.php">Contatti, policy, privacy</a>
   </footer>
 </body>
 </html>

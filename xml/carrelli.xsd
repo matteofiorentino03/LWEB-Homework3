@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:simpleType name="TipoMagliaCarrelloType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Standard"/>
+      <xs:enumeration value="Giocatore"/>
+      <xs:enumeration value="Personalizzata"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ScontoUtilizzatoType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FEDELISSIMO"/>
+      <xs:enumeration value="BENVENUTOLUPETTO"/>
+      <xs:enumeration value="RETRO"/>
+      <xs:enumeration value="REPUTAZIONE"/>
+      <xs:enumeration value="ANZIANITA"/>
+      <xs:enumeration value="TIPO_MAGLIA"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- ACCETTA anche nessun carrello -->
+  <xs:element name="carrelli">
+    <xs:complexType>
+      <xs:sequence minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="carrello" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_utente" type="xs:integer"/>
+              <xs:element name="data_carrello" type="xs:dateTime"/>
+              <xs:element name="articoli" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence minOccurs="0">
+                    <xs:element name="articolo" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ID_carrello" type="xs:integer"/>
+                          <xs:element name="tipo_maglia" type="TipoMagliaCarrelloType"/>
+                          <xs:element name="ID_maglia" type="xs:integer"/>
+                          <xs:element name="ID_maglia_giocatore" type="xs:integer" minOccurs="0"/>
+                          <xs:element name="ID_maglia_personalizzata" type="xs:integer" minOccurs="0"/>
+                          <xs:element name="prezzo_unitario" type="xs:decimal"/>
+                          <xs:element name="percentuale_sconto" type="xs:float" minOccurs="0"/>
+                          <xs:element name="prezzo_netto_riga" type="xs:decimal"/>
+                          <xs:element name="bonus_previsto" type="xs:decimal" minOccurs="0"/>
+                          <xs:element name="sconto_utilizzato" type="ScontoUtilizzatoType" maxOccurs="2"/>
+                          <xs:element name="BonusUtilizzato" type="xs:string" />
+                          <xs:element name="supplemento" type="xs:integer"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="riepilogo" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="totale_lordo" type="xs:decimal"/>
+                    <xs:element name="totale_sconti" type="xs:decimal"/>
+                    <xs:element name="totale_netto" type="xs:decimal"/>
+                    <xs:element name="bonus_totale" type="xs:decimal" minOccurs="0"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

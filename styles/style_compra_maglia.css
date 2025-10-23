@@ -89,16 +89,109 @@ input.addr{margin-top:10px}
 .alert-ok{background:#e9f8ed; color:#0a6b2f; border:1px solid #bfe7cb}
 .alert-err{background:#ffeaea; color:#a30000; border:1px solid #f3b7b7}
 /* Footer */
-footer{
-    margin-top:auto; 
-    background:#333; 
-    color:#fff; 
-    text-align:center;
-    padding: 7px; 
-    font-size: 13px; 
-    font-weight: 600;
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+    font-size: 0.8em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    margin-top: auto;
+}
+/* testo dei diritti centrato */
+footer p {
+  margin: 0;
+  text-align: center;
+  line-height: 1;
+}
+
+/* link "Chi siamo" fissato a destra, allineato verticalmente al centro del footer */
+footer .link_footer {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #f0ad4e;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* hover/focus styling per accessibilitÃ  */
+footer .link_footer:hover,
+footer .link_footer:focus {
+  text-decoration: underline;
+  color: #ffd18a;
+}
+
+/* su schermi stretti: link va sotto il testo e il layout diventa verticale */
+@media (max-width: 480px) {
+  footer {
+    flex-direction: column;
+    padding: 12px 16px;
+    justify-content: center;
   }
+  footer .link_footer {
+    position: static;
+    transform: none;
+    margin-top: 8px;
+  }
+}
 /* Responsive */
 @media (max-width:860px){
   .grid{grid-template-columns:1fr}
+
+}
+
+.prezzo-originale {
+  text-decoration: line-through;
+  color: #888;
+  margin-right: 0.5em;
+}
+.prezzo-scontato {
+  color: #d32f2f;
+  font-weight: bold;
+}
+
+.sconto-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  font-size: 15px;
+}
+
+.sconto-toggle {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #2ecc71; /* verde moderno */
+  transform: scale(1.1);
+}
+
+.sconto-item label {
+  cursor: pointer;
+}
+
+.bonus-item {
+  list-style: none;
+  margin: 10px 0;
+}
+
+.bonus-item .bonus-box {
+  background: #fff3cd;
+  padding: 12px 15px;
+  border-radius: 6px;
+  font-weight: 600;
+  color: #795548;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: pulse 1.5s infinite;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 70%;
 }

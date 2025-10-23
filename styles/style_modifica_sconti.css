@@ -1,0 +1,406 @@
+/* ===============================
+   RESET DI BASE E STRUTTURA
+=============================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background: #ffffffc4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-y: auto;
+  }
+  
+  /* ===============================
+     HEADER
+  =============================== */
+  header {
+    background-color: rgb(185, 7, 7);
+    color: rgba(231, 179, 9, 0.9);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    height: 100px;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    vertical-align: middle;
+    width: 50px;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .logo:hover {
+    transform: scale(1.1);
+  }
+  
+  h1 {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 2.3em;
+    font-weight: bold;
+  }
+  
+  .header-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* ===============================
+     LOGOUT
+  =============================== */
+  .logout {
+    background-color: rgb(134, 3, 3);
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: rgba(231, 179, 9, 0.877);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .logout:hover {
+    transform: scale(1.05);
+    background-color: rgb(100, 0, 0);
+  }
+  
+  .logout a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .utente-container {
+    display: flex;
+    gap: 10px;
+  }
+  
+  /* ===============================
+     TITOLI DI SEZIONE
+  =============================== */
+  .page-title {
+    text-align: center;
+    margin: 35px 0 25px;
+    font-size: 1.8em;
+    color: rgb(134, 3, 3);
+    text-transform: uppercase;
+  }
+  
+  .page-title--sconti {
+    color: rgba(231, 179, 9, 0.9);
+  }
+  
+  .section-subtitle {
+    text-align: center;
+    color: rgb(90, 6, 6);
+    margin: 15px 0 10px;
+    font-size: 1.3em;
+  }
+  
+  /* ===============================
+     CARD E FORM
+  =============================== */
+  .card {
+    width: 95%;
+    max-width: 900px;
+    margin: 0 auto 35px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .card.narrow {
+    max-width: 600px;
+  }
+  
+  .label {
+    display: block;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+  }
+  
+  select.input {
+    cursor: pointer;
+  }
+  
+  /* ===============================
+     GRID SYSTEM
+  =============================== */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  
+  .col {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .col-full {
+    grid-column: 1 / -1;
+  }
+  
+  /* ===============================
+     PULSANTI
+  =============================== */
+  .btn-submit {
+    background-color: rgb(134, 3, 3);
+    color: white;
+    padding: 14px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 15px;
+  }
+  
+  .btn-submit:hover {
+    background-color: #a30202;
+    transform: scale(1.03);
+  }
+  
+  /* ===============================
+     ALERT MESSAGGI
+  =============================== */
+  .alert {
+    width: 90%;
+    max-width: 900px;
+    margin: 25px auto;
+    padding: 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .alert-error {
+    background-color: #ffd4d4;
+    color: #a30000;
+    border: 2px solid #a30000;
+  }
+  
+  .alert-success {
+    background-color: #e1ffd4;
+    color: #307a05;
+    border: 2px solid #3a8000;
+  }
+  
+  /* ===============================
+     BLOCCO LEGACY / ROLE
+  =============================== */
+  .role-block {
+    background-color: #f9f9f9;
+    border-left: 5px solid rgb(134, 3, 3);
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+  
+  .inline {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .checkbox-inline {
+    margin-right: 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  /* ===============================
+     FOOTER
+  =============================== */
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 12px 0;
+    position: relative;
+    width: 100%;
+    font-size: 0.85em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+  }
+  
+  footer p {
+    margin: 0;
+    text-align: center;
+    line-height: 1;
+  }
+  
+  footer .link_footer {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #f0ad4e;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  
+  footer .link_footer:hover,
+  footer .link_footer:focus {
+    text-decoration: underline;
+    color: #ffd18a;
+  }
+  
+  /* MOBILE */
+  @media (max-width: 480px) {
+    footer {
+      flex-direction: column;
+      padding: 12px 16px;
+      justify-content: center;
+    }
+    footer .link_footer {
+      position: static;
+      transform: none;
+      margin-top: 8px;
+    }
+  }
+  
+  /* ===============================
+     NOTE / TESTI SECONDARI
+  =============================== */
+  .hint {
+    display: block;
+    font-size: 0.85em;
+    color: #777;
+    margin-top: -10px;
+    margin-bottom: 10px;
+  }
+  
+  /* Colori di evidenza per le due sezioni principali */
+  .card:nth-of-type(odd) {
+    border-left: 4px solid rgb(134, 3, 3);
+  }
+  .card:nth-of-type(even) {
+    border-left: 4px solid rgba(231, 179, 9, 0.9);
+  }
+
+  /* ===============================
+   BOTTONI AGGIUNGI E RIMUOVI
+=============================== */
+.btn-remove {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.btn-remove:hover {
+    background-color: #c82333;
+    transform: scale(1.05);
+}
+
+.btn-add {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-add:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+/* Stile per gli elementi delle stagioni e soglie */
+.stagione-item {
+     display: flex;
+    align-items: center; /* Allinea verticalmente al centro */
+    gap: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    border-left: 3px solid rgb(134, 3, 3);
+}
+
+/* Responsive per mobile */
+@media (max-width: 768px) {
+    .stagione-item {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .stagione-item .btn-remove {
+        margin-left: 0;
+        margin-top: 5px;
+        align-self: flex-end;
+    }
+    
+    .soglia-reputazione {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+    
+    .btn-remove,
+    .btn-add {
+        padding: 8px 12px;
+        font-size: 0.85em;
+    }
+}
+
+.input-soglia-reputazione {
+    /* I tuoi stili personalizzati */
+    border: 2px solid #ccc;
+    padding: 8px;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.input-soglia-reputazione:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.soglia-reputazione {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 10px;
+    align-items: end;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}

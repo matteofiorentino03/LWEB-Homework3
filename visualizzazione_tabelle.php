@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// Se è stato cliccato logout
+// Logout
 if (isset($_GET['logout'])) {
     session_unset();
     session_destroy();
@@ -9,13 +9,22 @@ if (isset($_GET['logout'])) {
     exit();
 }
 
-// Verifica se loggato
+//  Verifica login e ruolo
 $isLoggedIn = isset($_SESSION['Username']);
 $username = $isLoggedIn ? $_SESSION['Username'] : null;
-$ruolo = $isLoggedIn && isset($_SESSION['Ruolo']) ? $_SESSION['Ruolo'] : null;
+$ruolo = $isLoggedIn && !empty($_SESSION['Ruolo']) ? strtolower($_SESSION['Ruolo']) : null;
 
-// Link alla homepage
-$homepage_link = ($ruolo === 'admin') ? 'homepage_admin.php' : 'homepage_user.php';
+//  Imposta homepage in base alla condizione
+if (!$isLoggedIn) {
+    // Utente non loggato
+    $homepage_link = 'homepage_user.php';
+} elseif ($ruolo === 'gestore') {
+    // Gestore
+    $homepage_link = 'homepage_gestore.php';
+} else {
+    // Tutti gli altri (cliente o ruoli non riconosciuti)
+    $homepage_link = 'homepage_user.php';
+}
 ?>
 
 <!DOCTYPE html>
@@ -27,23 +36,23 @@ $homepage_link = ($ruolo === 'admin') ? 'homepage_admin.php' : 'homepage_user.ph
 </head>
 <body>
 <header>
-    <a href="<?php echo $homepage_link; ?>" class="header-link">
+    <a href="<?= htmlspecialchars($homepage_link) ?>" class="header-link">
         <div class="logo-container">
             <img src="img/AS_Roma_Logo_2017.svg.png" alt="Logo AS Roma" class="logo" />
         </div>
     </a>
     <h1>
-        <a href="<?php echo $homepage_link; ?>" style="color: inherit; text-decoration: none;">PLAYERBASE</a>
+        <a href="<?= htmlspecialchars($homepage_link) ?>" style="color: inherit; text-decoration: none;">PLAYERBASE</a>
     </h1>
 
     <div class="utente-container">
-            <div class="logout">
-                <?php if ($isLoggedIn): ?>
-                    <a href="?logout=true"><p>Logout</p></a>
-                <?php else: ?>
-                    <a href="entering.html"><p>Login / Registrati</p></a>
-                <?php endif; ?>
-            </div>
+        <div class="logout">
+            <?php if ($isLoggedIn): ?>
+                <a href="?logout=true"><p>Logout</p></a>
+            <?php else: ?>
+                <a href="entering.html"><p>Login / Registrati</p></a>
+            <?php endif; ?>
+        </div>
     </div>
 </header>
 
@@ -60,6 +69,7 @@ $homepage_link = ($ruolo === 'admin') ? 'homepage_admin.php' : 'homepage_user.ph
 
 <footer>
     <p>&copy; 2025 Playerbase. Tutti i diritti riservati.</p>
+    <a class="link_footer" href="contatti.php">Contatti, policy, privacy</a>
 </footer>
 </body>
 </html>

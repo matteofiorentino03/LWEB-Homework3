@@ -48,4 +48,20 @@
     <espulsioni>0</espulsioni>
     <ruolo>trequartista</ruolo>
   </centrocampista>
+  <centrocampista>
+    <ID_giocatore>26</ID_giocatore>
+    <gol_fatti>2</gol_fatti>
+    <assist>1</assist>
+    <ammonizioni>1</ammonizioni>
+    <espulsioni>1</espulsioni>
+    <ruolo>centrale</ruolo>
+  </centrocampista>
+  <centrocampista>
+    <ID_giocatore>26</ID_giocatore>
+    <gol_fatti>1</gol_fatti>
+    <assist>1</assist>
+    <ammonizioni>1</ammonizioni>
+    <espulsioni>1</espulsioni>
+    <ruolo>mediano</ruolo>
+  </centrocampista>
 </centrocampisti>

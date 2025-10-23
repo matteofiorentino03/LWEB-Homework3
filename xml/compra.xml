@@ -4,48 +4,74 @@
     <ID>1</ID>
     <ID_Utente>2</ID_Utente>
     <ID_Maglia>9</ID_Maglia>
-    <pagamento_finale>160</pagamento_finale>
+    <pagamento_finale>120</pagamento_finale>
     <indirizzo_consegna>Via l'etto</indirizzo_consegna>
-    <data_compra>2025-09-22</data_compra>
+    <data_compra>2025-10-19</data_compra>
+    <percentualeSconto>30</percentualeSconto>
+    <sconto_utilizzato>TIPO_MAGLIA</sconto_utilizzato>
   </ordine>
   <ordine>
     <ID>2</ID>
     <ID_Utente>2</ID_Utente>
-    <ID_Maglia>10</ID_Maglia>
-    <pagamento_finale>170</pagamento_finale>
+    <ID_Maglia>9</ID_Maglia>
+    <pagamento_finale>80.00</pagamento_finale>
     <indirizzo_consegna>Via l'etto</indirizzo_consegna>
-    <data_compra>2025-09-22</data_compra>
+    <data_compra>2025-10-19</data_compra>
   </ordine>
   <ordine>
     <ID>3</ID>
     <ID_Utente>2</ID_Utente>
-    <ID_Maglia>3</ID_Maglia>
-    <pagamento_finale>160</pagamento_finale>
+    <ID_Maglia>9</ID_Maglia>
+    <pagamento_finale>106.50</pagamento_finale>
     <indirizzo_consegna>Via l'etto</indirizzo_consegna>
-    <data_compra>2025-09-22</data_compra>
+    <data_compra>2025-10-19</data_compra>
   </ordine>
   <ordine>
     <ID>4</ID>
-    <ID_Utente>2</ID_Utente>
-    <ID_Maglia>2</ID_Maglia>
-    <pagamento_finale>170</pagamento_finale>
-    <indirizzo_consegna>Via l'etto</indirizzo_consegna>
-    <data_compra>2025-09-22</data_compra>
+    <ID_Utente>5</ID_Utente>
+    <ID_Maglia>11</ID_Maglia>
+    <pagamento_finale>105</pagamento_finale>
+    <indirizzo_consegna>a</indirizzo_consegna>
+    <data_compra>2025-10-19</data_compra>
+    <percentualeSconto>30</percentualeSconto>
+    <sconto_utilizzato>TIPO_MAGLIA</sconto_utilizzato>
   </ordine>
   <ordine>
     <ID>5</ID>
-    <ID_Utente>3</ID_Utente>
-    <ID_Maglia>7</ID_Maglia>
-    <pagamento_finale>140</pagamento_finale>
-    <indirizzo_consegna>Via carina</indirizzo_consegna>
-    <data_compra>2025-09-22</data_compra>
+    <ID_Utente>5</ID_Utente>
+    <ID_Maglia>58</ID_Maglia>
+    <pagamento_finale>70</pagamento_finale>
+    <indirizzo_consegna>via si</indirizzo_consegna>
+    <data_compra>2025-10-20</data_compra>
+    <percentualeSconto>30</percentualeSconto>
+    <sconto_utilizzato>TIPO_MAGLIA</sconto_utilizzato>
   </ordine>
   <ordine>
     <ID>6</ID>
-    <ID_Utente>4</ID_Utente>
-    <ID_Maglia>43</ID_Maglia>
-    <pagamento_finale>125</pagamento_finale>
-    <indirizzo_consegna>via si</indirizzo_consegna>
-    <data_compra>2025-09-23</data_compra>
+    <ID_Utente>5</ID_Utente>
+    <ID_Maglia>9</ID_Maglia>
+    <pagamento_finale>105</pagamento_finale>
+    <indirizzo_consegna>SDFDSASDFVGVCDSDCVBVCX</indirizzo_consegna>
+    <data_compra>2025-10-23</data_compra>
+    <percentualeSconto>30</percentualeSconto>
+    <sconto_utilizzato>TIPO_MAGLIA</sconto_utilizzato>
+  </ordine>
+  <ordine>
+    <ID>7</ID>
+    <ID_Utente>5</ID_Utente>
+    <ID_Maglia>6</ID_Maglia>
+    <pagamento_finale>130</pagamento_finale>
+    <indirizzo_consegna>edsr</indirizzo_consegna>
+    <data_compra>2025-10-23</data_compra>
+    <percentualeSconto>0</percentualeSconto>
+  </ordine>
+  <ordine>
+    <ID>8</ID>
+    <ID_Utente>5</ID_Utente>
+    <ID_Maglia>7</ID_Maglia>
+    <pagamento_finale>145</pagamento_finale>
+    <indirizzo_consegna>ettd</indirizzo_consegna>
+    <data_compra>2025-10-23</data_compra>
+    <percentualeSconto>0</percentualeSconto>
   </ordine>
 </compra>

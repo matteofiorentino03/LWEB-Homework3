@@ -5,40 +5,40 @@
     <tipo>casa</tipo>
     <taglia>S</taglia>
     <Sponsor>Adidas</Sponsor>
-    <stagione>2025-26</stagione>
-    <descrizione_maglia>La nuova maglia da calcio della A.S. Roma per la stagione 2025/26 è rossa scura con i loghi e i bordi laterali arancioni. Questi colori ricordano la maglia del 1993-94, fatta da Adidas. Ufficialmente, i colori sono Claret/Arancione</descrizione_maglia>
+    <stagione>2025/26</stagione>
+    <descrizione_maglia>La nuova maglia da calcio della A.S. Roma per la stagione 2025/26 è rossa scura con i loghi e i bordi laterali arancioni.                   Questi colori ricordano la maglia del 1993-94, fatta da Adidas. Ufficialmente, i colori sono Claret/Arancione</descrizione_maglia>
     <costo_fisso>150</costo_fisso>
-    <path_immagine>img/maglie/1754815678_home25-26.jpg</path_immagine>
+    <path_immagine>img/maglie/1760345646_ebcf0f01.png</path_immagine>
   </maglia>
   <maglia>
     <ID>2</ID>
     <tipo>casa</tipo>
     <taglia>M</taglia>
     <Sponsor>Adidas</Sponsor>
-    <stagione>2025-26</stagione>
-    <descrizione_maglia>La nuova maglia da calcio della A.S. Roma per la stagione 2025/26 è rossa scura con i loghi e i bordi laterali arancioni. Questi colori ricordano la maglia del 1993-94, fatta da Adidas. Ufficialmente, i colori sono Claret/Arancione</descrizione_maglia>
+    <stagione>2025/26</stagione>
+    <descrizione_maglia>La nuova maglia da calcio della A.S. Roma per la stagione 2025/26 è rossa scura con i loghi e i bordi laterali arancioni.                     Questi colori ricordano la maglia del 1993-94, fatta da Adidas. Ufficialmente, i colori sono Claret/Arancione</descrizione_maglia>
     <costo_fisso>150</costo_fisso>
-    <path_immagine>img/maglie/1754816314_home25-26.jpg</path_immagine>
+    <path_immagine>img/maglie/1760345660_cb747c2e.png</path_immagine>
   </maglia>
   <maglia>
     <ID>3</ID>
     <tipo>casa</tipo>
     <taglia>L</taglia>
     <Sponsor>Adidas</Sponsor>
-    <stagione>2025-26</stagione>
+    <stagione>2025/26</stagione>
     <descrizione_maglia>La nuova maglia da calcio della A.S. Roma per la stagione 2025/26 è rossa scura con i loghi e i bordi laterali arancioni. Questi colori ricordano la maglia del 1993-94, fatta da Adidas. Ufficialmente, i colori sono Claret/Arancione</descrizione_maglia>
     <costo_fisso>150</costo_fisso>
-    <path_immagine>img/maglie/1754816366_home25-26.jpg</path_immagine>
+    <path_immagine>img/maglie/1760345668_4fc136a1.png</path_immagine>
   </maglia>
   <maglia>
     <ID>4</ID>
     <tipo>casa</tipo>
     <taglia>XL</taglia>
     <Sponsor>Adidas</Sponsor>
-    <stagione>2025-26</stagione>
+    <stagione>2025/26</stagione>
     <descrizione_maglia>La nuova maglia da calcio della A.S. Roma per la stagione 2025/26 è rossa scura con i loghi e i bordi laterali arancioni. Questi colori ricordano la maglia del 1993-94, fatta da Adidas. Ufficialmente, i colori sono Claret/Arancione</descrizione_maglia>
     <costo_fisso>150</costo_fisso>
-    <path_immagine>img/maglie/1754816382_home25-26.jpg</path_immagine>
+    <path_immagine>img/maglie/1760345691_4fd88a2d.png</path_immagine>
   </maglia>
   <maglia>
     <ID>5</ID>
@@ -48,7 +48,7 @@
     <stagione>2025/26</stagione>
     <descrizione_maglia>(Non c'è il logo di Riyadh Season)La maglia da calcio Adidas A.S. Roma 25-26 Fuori è di colore prevalentemente arancione, combinato con accenti neri e giallo brillante. Il logo Adidas, lo stemma del Lupetto, il colletto e le tre strisce sono tutti neri. La caratteristica più evidente della maglia è il motivo a fulmini che va dalla spalla sinistra alla parte inferiore destra della maglia, creando un look unico. Il motivo è ispirato all'antico mito di Giove.</descrizione_maglia>
     <costo_fisso>130</costo_fisso>
-    <path_immagine>img/maglie/1754816926_fuori25-26.jpg</path_immagine>
+    <path_immagine>img/maglie/1760346273_33c807bd.png</path_immagine>
   </maglia>
   <maglia>
     <ID>6</ID>
@@ -58,7 +58,7 @@
     <stagione>2025/26</stagione>
     <descrizione_maglia>(Non c'è il logo di Riyadh Season)La maglia da calcio Adidas A.S. Roma 25-26 Fuori è di colore prevalentemente arancione, combinato con accenti neri e giallo brillante. Il logo Adidas, lo stemma del Lupetto, il colletto e le tre strisce sono tutti neri. La caratteristica più evidente della maglia è il motivo a fulmini che va dalla spalla sinistra alla parte inferiore destra della maglia, creando un look unico. Il motivo è ispirato all'antico mito di Giove.</descrizione_maglia>
     <costo_fisso>130</costo_fisso>
-    <path_immagine>img/maglie/1754817782_fuori25-26.jpg</path_immagine>
+    <path_immagine>img/maglie/1760346280_3f249325.png</path_immagine>
   </maglia>
   <maglia>
     <ID>7</ID>
@@ -68,7 +68,7 @@
     <stagione>2025/26</stagione>
     <descrizione_maglia>(Non c'è il logo di Riyadh Season)La maglia da calcio Adidas A.S. Roma 25-26 Fuori è di colore prevalentemente arancione, combinato con accenti neri e giallo brillante. Il logo Adidas, lo stemma del Lupetto, il colletto e le tre strisce sono tutti neri. La caratteristica più evidente della maglia è il motivo a fulmini che va dalla spalla sinistra alla parte inferiore destra della maglia, creando un look unico. Il motivo è ispirato all'antico mito di Giove.</descrizione_maglia>
     <costo_fisso>130</costo_fisso>
-    <path_immagine>img/maglie/1754817799_fuori25-26.jpg</path_immagine>
+    <path_immagine>img/maglie/1760346295_a8bc1a0f.png</path_immagine>
   </maglia>
   <maglia>
     <ID>8</ID>
@@ -78,7 +78,7 @@
     <stagione>2025/26</stagione>
     <descrizione_maglia>(Non c'è il logo di Riyadh Season)La maglia da calcio Adidas A.S. Roma 25-26 Fuori è di colore prevalentemente arancione, combinato con accenti neri e giallo brillante. Il logo Adidas, lo stemma del Lupetto, il colletto e le tre strisce sono tutti neri. La caratteristica più evidente della maglia è il motivo a fulmini che va dalla spalla sinistra alla parte inferiore destra della maglia, creando un look unico. Il motivo è ispirato all'antico mito di Giove.</descrizione_maglia>
     <costo_fisso>130</costo_fisso>
-    <path_immagine>img/maglie/1754817821_fuori25-26.jpg</path_immagine>
+    <path_immagine>img/maglie/1760346308_c54cda34.png</path_immagine>
   </maglia>
   <maglia>
     <ID>9</ID>
@@ -88,7 +88,7 @@
     <stagione>2025/26</stagione>
     <descrizione_maglia>Diventando una squadra d'elite Adidas a partire dalla stagione 25/26, la terza maglia sarà caratterizzata dal logo Trefoil. Per la prima volta nella storia, la terza maglia è bianca, abbinata ad accenti verdi e gialli e a un colletto a polo per un look classico.</descrizione_maglia>
     <costo_fisso>150</costo_fisso>
-    <path_immagine>img/maglie/1754818309_terza25-26.jpg</path_immagine>
+    <path_immagine>img/maglie/1760346044_ab02cc83.png</path_immagine>
   </maglia>
   <maglia>
     <ID>10</ID>
@@ -98,7 +98,7 @@
     <stagione>2025/26</stagione>
     <descrizione_maglia>Diventando una squadra d'elite Adidas a partire dalla stagione 25/26, la terza maglia sarà caratterizzata dal logo Trefoil. Per la prima volta nella storia, la terza maglia è bianca, abbinata ad accenti verdi e gialli e a un colletto a polo per un look classico.</descrizione_maglia>
     <costo_fisso>150</costo_fisso>
-    <path_immagine>img/maglie/1754818374_terza25-26.jpg</path_immagine>
+    <path_immagine>img/maglie/1760346054_0e5ea645.png</path_immagine>
   </maglia>
   <maglia>
     <ID>11</ID>
@@ -108,7 +108,7 @@
     <stagione>2025/26</stagione>
     <descrizione_maglia>Diventando una squadra d'elite Adidas a partire dalla stagione 25/26, la terza maglia sarà caratterizzata dal logo Trefoil. Per la prima volta nella storia, la terza maglia è bianca, abbinata ad accenti verdi e gialli e a un colletto a polo per un look classico.</descrizione_maglia>
     <costo_fisso>150</costo_fisso>
-    <path_immagine>img/maglie/1754818397_terza25-26.jpg</path_immagine>
+    <path_immagine>img/maglie/1760346062_50d73b48.png</path_immagine>
   </maglia>
   <maglia>
     <ID>12</ID>
@@ -118,7 +118,7 @@
     <stagione>2025/26</stagione>
     <descrizione_maglia>Diventando una squadra d'elite Adidas a partire dalla stagione 25/26, la terza maglia sarà caratterizzata dal logo Trefoil. Per la prima volta nella storia, la terza maglia è bianca, abbinata ad accenti verdi e gialli e a un colletto a polo per un look classico.</descrizione_maglia>
     <costo_fisso>150</costo_fisso>
-    <path_immagine>img/maglie/1754818418_terza25-26.jpg</path_immagine>
+    <path_immagine>img/maglie/1760346070_412d186b.png</path_immagine>
   </maglia>
   <maglia>
     <ID>13</ID>
@@ -128,7 +128,7 @@
     <stagione>2025/26</stagione>
     <descrizione_maglia>Prima maglia da Portiere (non c'è il logo di Riyadh Season).</descrizione_maglia>
     <costo_fisso>120</costo_fisso>
-    <path_immagine>img/maglie/1754818790_por125-26.jpg</path_immagine>
+    <path_immagine>img/maglie/1760346976_31fbbb9e.png</path_immagine>
   </maglia>
   <maglia>
     <ID>14</ID>
@@ -138,7 +138,7 @@
     <stagione>2025/26</stagione>
     <descrizione_maglia>Prima maglia da Portiere (non c'è il logo di Riyadh Season).</descrizione_maglia>
     <costo_fisso>120</costo_fisso>
-    <path_immagine>img/maglie/1754818810_por125-26.jpg</path_immagine>
+    <path_immagine>img/maglie/1760346984_e8a7c0d3.png</path_immagine>
   </maglia>
   <maglia>
     <ID>15</ID>
@@ -148,7 +148,7 @@
     <stagione>2025/26</stagione>
     <descrizione_maglia>Prima maglia da Portiere (non c'è il logo di Riyadh Season).</descrizione_maglia>
     <costo_fisso>120</costo_fisso>
-    <path_immagine>img/maglie/1754818835_por125-26.jpg</path_immagine>
+    <path_immagine>img/maglie/1760346992_4b799c1b.png</path_immagine>
   </maglia>
   <maglia>
     <ID>16</ID>
@@ -158,7 +158,7 @@
     <stagione>2025/26</stagione>
     <descrizione_maglia>Prima maglia da Portiere (non c'è il logo di Riyadh Season).</descrizione_maglia>
     <costo_fisso>120</costo_fisso>
-    <path_immagine>img/maglie/1754818850_por125-26.jpg</path_immagine>
+    <path_immagine>img/maglie/1760347010_ad41ec87.png</path_immagine>
   </maglia>
   <maglia>
     <ID>17</ID>
@@ -168,7 +168,7 @@
     <stagione>2024/25</stagione>
     <descrizione_maglia>La maglia home dell'Adidas A.S. Roma 2024-25 presenta un'elegante combinazione di colori, con il colore principale Claret abbinato a loghi e linee verticali dorate</descrizione_maglia>
     <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754851303_home24-25.jpeg</path_immagine>
+    <path_immagine>img/maglie/1760347068_67bf64d3.png</path_immagine>
   </maglia>
   <maglia>
     <ID>18</ID>
@@ -178,7 +178,7 @@
     <stagione>2024/25</stagione>
     <descrizione_maglia>La maglia home dell'Adidas A.S. Roma 2024-25 presenta un'elegante combinazione di colori, con il colore principale Claret abbinato a loghi e linee verticali dorate</descrizione_maglia>
     <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754851350_home24-25.jpeg</path_immagine>
+    <path_immagine>img/maglie/1760347079_4d1b9a59.png</path_immagine>
   </maglia>
   <maglia>
     <ID>19</ID>
@@ -188,7 +188,7 @@
     <stagione>2024/25</stagione>
     <descrizione_maglia>La maglia home dell'Adidas A.S. Roma 2024-25 presenta un'elegante combinazione di colori, con il colore principale Claret abbinato a loghi e linee verticali dorate</descrizione_maglia>
     <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754851375_home24-25.jpeg</path_immagine>
+    <path_immagine>img/maglie/1760347087_dd4f3e78.png</path_immagine>
   </maglia>
   <maglia>
     <ID>20</ID>
@@ -198,7 +198,7 @@
     <stagione>2024/25</stagione>
     <descrizione_maglia>La maglia home dell'Adidas A.S. Roma 2024-25 presenta un'elegante combinazione di colori, con il colore principale Claret abbinato a loghi e linee verticali dorate</descrizione_maglia>
     <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754851393_home24-25.jpeg</path_immagine>
+    <path_immagine>img/maglie/1760347097_47e749bf.png</path_immagine>
   </maglia>
   <maglia>
     <ID>21</ID>
@@ -208,7 +208,7 @@
     <stagione>2024/25</stagione>
     <descrizione_maglia>La maglia da calcio Fuori dell'Adidas A.S. Roma 24-25 è prevalentemente bianca con accenti rossi e arancioni fluorescenti, ispirati alla street art romana della città. I colori ufficiali sono bianco argentato, arancio fluorescente e rosso pompeiano</descrizione_maglia>
     <costo_fisso>110</costo_fisso>
-    <path_immagine>img/maglie/1754851611_fuori24-25.jpeg</path_immagine>
+    <path_immagine>img/maglie/1760346564_64c67f33.png</path_immagine>
   </maglia>
   <maglia>
     <ID>22</ID>
@@ -218,7 +218,7 @@
     <stagione>2024/25</stagione>
     <descrizione_maglia>La maglia da calcio Fuori dell'Adidas A.S. Roma 24-25 è prevalentemente bianca con accenti rossi e arancioni fluorescenti, ispirati alla street art romana della città. I colori ufficiali sono bianco argentato, arancio fluorescente e rosso pompeiano</descrizione_maglia>
     <costo_fisso>110</costo_fisso>
-    <path_immagine>img/maglie/1754851649_fuori24-25.jpeg</path_immagine>
+    <path_immagine>img/maglie/1760346575_afda00c3.png</path_immagine>
   </maglia>
   <maglia>
     <ID>23</ID>
@@ -228,7 +228,7 @@
     <stagione>2024/25</stagione>
     <descrizione_maglia>La maglia da calcio Fuori dell'Adidas A.S. Roma 24-25 è prevalentemente bianca con accenti rossi e arancioni fluorescenti, ispirati alla street art romana della città. I colori ufficiali sono bianco argentato, arancio fluorescente e rosso pompeiano</descrizione_maglia>
     <costo_fisso>110</costo_fisso>
-    <path_immagine>img/maglie/1754851674_fuori24-25.jpeg</path_immagine>
+    <path_immagine>img/maglie/1760346585_b6e6a7e6.png</path_immagine>
   </maglia>
   <maglia>
     <ID>24</ID>
@@ -238,7 +238,7 @@
     <stagione>2024/25</stagione>
     <descrizione_maglia>La maglia da calcio Fuori dell'Adidas A.S. Roma 24-25 è prevalentemente bianca con accenti rossi e arancioni fluorescenti, ispirati alla street art romana della città. I colori ufficiali sono bianco argentato, arancio fluorescente e rosso pompeiano</descrizione_maglia>
     <costo_fisso>110</costo_fisso>
-    <path_immagine>img/maglie/1754851698_fuori24-25.jpeg</path_immagine>
+    <path_immagine>img/maglie/1760346597_b3fef586.png</path_immagine>
   </maglia>
   <maglia>
     <ID>25</ID>
@@ -248,7 +248,7 @@
     <stagione>2024/25</stagione>
     <descrizione_maglia>La terza maglia Adidas A.S. Roma 2024-25 è la prima maglia navy del club dalla stagione 2020-21. Ufficialmente, il colore principale è il Tech-Indigo.</descrizione_maglia>
     <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754851905_terza24-25.jpeg</path_immagine>
+    <path_immagine>img/maglie/1760345984_6b805806.png</path_immagine>
   </maglia>
   <maglia>
     <ID>26</ID>
@@ -258,7 +258,7 @@
     <stagione>2024/25</stagione>
     <descrizione_maglia>La terza maglia Adidas A.S. Roma 2024-25 è la prima maglia navy del club dalla stagione 2020-21. Ufficialmente, il colore principale è il Tech-Indigo.</descrizione_maglia>
     <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754851936_terza24-25.jpeg</path_immagine>
+    <path_immagine>img/maglie/1760345995_a9446556.png</path_immagine>
   </maglia>
   <maglia>
     <ID>27</ID>
@@ -268,7 +268,7 @@
     <stagione>2024/25</stagione>
     <descrizione_maglia>La terza maglia Adidas A.S. Roma 2024-25 è la prima maglia navy del club dalla stagione 2020-21. Ufficialmente, il colore principale è il Tech-Indigo.</descrizione_maglia>
     <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754851964_terza24-25.jpeg</path_immagine>
+    <path_immagine>img/maglie/1760346006_c92ee941.png</path_immagine>
   </maglia>
   <maglia>
     <ID>28</ID>
@@ -278,7 +278,7 @@
     <stagione>2024/25</stagione>
     <descrizione_maglia>La terza maglia Adidas A.S. Roma 2024-25 è la prima maglia navy del club dalla stagione 2020-21. Ufficialmente, il colore principale è il Tech-Indigo.</descrizione_maglia>
     <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754851983_terza24-25.jpeg</path_immagine>
+    <path_immagine>img/maglie/1760346016_37f7eb6d.png</path_immagine>
   </maglia>
   <maglia>
     <ID>29</ID>
@@ -288,7 +288,7 @@
     <stagione>2024/25</stagione>
     <descrizione_maglia>Prima Maglia da Portiere.</descrizione_maglia>
     <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754852062_por124-25.jpg</path_immagine>
+    <path_immagine>img/maglie/1760347112_c830a3fe.png</path_immagine>
   </maglia>
   <maglia>
     <ID>30</ID>
@@ -298,7 +298,7 @@
     <stagione>2024/25</stagione>
     <descrizione_maglia>Prima Maglia da Portiere.</descrizione_maglia>
     <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754852081_por124-25.jpg</path_immagine>
+    <path_immagine>img/maglie/1760347120_31af1c3a.png</path_immagine>
   </maglia>
   <maglia>
     <ID>31</ID>
@@ -308,7 +308,7 @@
     <stagione>2024/25</stagione>
     <descrizione_maglia>Prima Maglia da Portiere.</descrizione_maglia>
     <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754852099_por124-25.jpg</path_immagine>
+    <path_immagine>img/maglie/1760347130_7282cfda.png</path_immagine>
   </maglia>
   <maglia>
     <ID>32</ID>
@@ -318,7 +318,7 @@
     <stagione>2024/25</stagione>
     <descrizione_maglia>Prima Maglia da Portiere.</descrizione_maglia>
     <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754852114_por124-25.jpg</path_immagine>
+    <path_immagine>img/maglie/1760347170_523acef5.png</path_immagine>
   </maglia>
   <maglia>
     <ID>33</ID>
@@ -328,7 +328,7 @@
     <stagione>2022/23</stagione>
     <descrizione_maglia>La maglia home New Balance A.S. Roma 2022-23 presenta un sottile design a metà tra il rosso e il giallo.</descrizione_maglia>
     <costo_fisso>110</costo_fisso>
-    <path_immagine>img/maglie/1754852433_home22-23.jpg</path_immagine>
+    <path_immagine>img/maglie/1760346893_6b627376.png</path_immagine>
   </maglia>
   <maglia>
     <ID>34</ID>
@@ -338,7 +338,7 @@
     <stagione>2022/23</stagione>
     <descrizione_maglia>La maglia home New Balance A.S. Roma 2022-23 presenta un sottile design a metà tra il rosso e il giallo.</descrizione_maglia>
     <costo_fisso>110</costo_fisso>
-    <path_immagine>img/maglie/1754852451_home22-23.jpg</path_immagine>
+    <path_immagine>img/maglie/1760346918_88659756.png</path_immagine>
   </maglia>
   <maglia>
     <ID>35</ID>
@@ -348,7 +348,7 @@
     <stagione>2022/23</stagione>
     <descrizione_maglia>La maglia home New Balance A.S. Roma 2022-23 presenta un sottile design a metà tra il rosso e il giallo.</descrizione_maglia>
     <costo_fisso>110</costo_fisso>
-    <path_immagine>img/maglie/1754852535_home22-23.jpg</path_immagine>
+    <path_immagine>img/maglie/1760346939_160ca9c8.png</path_immagine>
   </maglia>
   <maglia>
     <ID>36</ID>
@@ -358,7 +358,7 @@
     <stagione>2022/23</stagione>
     <descrizione_maglia>La maglia home New Balance A.S. Roma 2022-23 presenta un sottile design a metà tra il rosso e il giallo.</descrizione_maglia>
     <costo_fisso>110</costo_fisso>
-    <path_immagine>img/maglie/1754852558_home22-23.jpg</path_immagine>
+    <path_immagine>img/maglie/1760346948_30cf814a.png</path_immagine>
   </maglia>
   <maglia>
     <ID>37</ID>
@@ -368,7 +368,7 @@
     <stagione>2022/23</stagione>
     <descrizione_maglia>La maglia da trasferta New Balance A.S. Roma 2022-23 è prevalentemente bianca con un leggero motivo sul davanti</descrizione_maglia>
     <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754852678_fuori22-23.jpg</path_immagine>
+    <path_immagine>img/maglie/1760346458_846d9d72.png</path_immagine>
   </maglia>
   <maglia>
     <ID>38</ID>
@@ -378,7 +378,7 @@
     <stagione>2022/23</stagione>
     <descrizione_maglia>La maglia da trasferta New Balance A.S. Roma 2022-23 è prevalentemente bianca con un leggero motivo sul davanti</descrizione_maglia>
     <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754852720_fuori22-23.jpg</path_immagine>
+    <path_immagine>img/maglie/1760346468_b942516b.png</path_immagine>
   </maglia>
   <maglia>
     <ID>39</ID>
@@ -388,7 +388,7 @@
     <stagione>2022/23</stagione>
     <descrizione_maglia>La maglia da trasferta New Balance A.S. Roma 2022-23 è prevalentemente bianca con un leggero motivo sul davanti</descrizione_maglia>
     <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754852884_fuori22-23.jpg</path_immagine>
+    <path_immagine>img/maglie/1760346504_36d47ca9.png</path_immagine>
   </maglia>
   <maglia>
     <ID>40</ID>
@@ -398,7 +398,7 @@
     <stagione>2022/23</stagione>
     <descrizione_maglia>La maglia da trasferta New Balance A.S. Roma 2022-23 è prevalentemente bianca con un leggero motivo sul davanti</descrizione_maglia>
     <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754852899_fuori22-23.jpg</path_immagine>
+    <path_immagine>img/maglie/1760346531_cc9d5f37.png</path_immagine>
   </maglia>
   <maglia>
     <ID>41</ID>
@@ -408,7 +408,7 @@
     <stagione>2022/23</stagione>
     <descrizione_maglia>Con un look unico, la terza maglia New Balance A.S. Roma 2022-23 è principalmente nera con un motivo grafico rosa e antracite sul davanti e sulle maniche. Questo motivo raffigura una pletora di linee diagonali e verticali.</descrizione_maglia>
     <costo_fisso>105</costo_fisso>
-    <path_immagine>img/maglie/1754853179_terza22-23.jpg</path_immagine>
+    <path_immagine>img/maglie/1760345917_cbcd82b0.png</path_immagine>
   </maglia>
   <maglia>
     <ID>42</ID>
@@ -418,7 +418,7 @@
     <stagione>2022/23</stagione>
     <descrizione_maglia>Con un look unico, la terza maglia New Balance A.S. Roma 2022-23 è principalmente nera con un motivo grafico rosa e antracite sul davanti e sulle maniche. Questo motivo raffigura una pletora di linee diagonali e verticali.</descrizione_maglia>
     <costo_fisso>105</costo_fisso>
-    <path_immagine>img/maglie/1754853206_terza22-23.jpg</path_immagine>
+    <path_immagine>img/maglie/1760345927_883493db.png</path_immagine>
   </maglia>
   <maglia>
     <ID>43</ID>
@@ -428,7 +428,7 @@
     <stagione>2022/23</stagione>
     <descrizione_maglia>Con un look unico, la terza maglia New Balance A.S. Roma 2022-23 è principalmente nera con un motivo grafico rosa e antracite sul davanti e sulle maniche. Questo motivo raffigura una pletora di linee diagonali e verticali.</descrizione_maglia>
     <costo_fisso>105</costo_fisso>
-    <path_immagine>img/maglie/1754853229_terza22-23.jpg</path_immagine>
+    <path_immagine>img/maglie/1760345935_3f998c9d.png</path_immagine>
   </maglia>
   <maglia>
     <ID>44</ID>
@@ -438,7 +438,7 @@
     <stagione>2022/23</stagione>
     <descrizione_maglia>Con un look unico, la terza maglia New Balance A.S. Roma 2022-23 è principalmente nera con un motivo grafico rosa e antracite sul davanti e sulle maniche. Questo motivo raffigura una pletora di linee diagonali e verticali.</descrizione_maglia>
     <costo_fisso>105</costo_fisso>
-    <path_immagine>img/maglie/1754853246_terza22-23.jpg</path_immagine>
+    <path_immagine>img/maglie/1760345949_9b1729ff.png</path_immagine>
   </maglia>
   <maglia>
     <ID>45</ID>
@@ -448,7 +448,7 @@
     <stagione>2022/23</stagione>
     <descrizione_maglia>Seconda Maglia da Portiere.</descrizione_maglia>
     <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754853348_por222-23.jpg</path_immagine>
+    <path_immagine>img/maglie/1760345852_2e9e80bd.png</path_immagine>
   </maglia>
   <maglia>
     <ID>46</ID>
@@ -458,7 +458,7 @@
     <stagione>2022/23</stagione>
     <descrizione_maglia>Seconda Maglia da Portiere.</descrizione_maglia>
     <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754853373_por222-23.jpg</path_immagine>
+    <path_immagine>img/maglie/1760345862_276d1119.png</path_immagine>
   </maglia>
   <maglia>
     <ID>47</ID>
@@ -468,7 +468,7 @@
     <stagione>2022/23</stagione>
     <descrizione_maglia>Seconda Maglia da Portiere.</descrizione_maglia>
     <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754853396_por222-23.jpg</path_immagine>
+    <path_immagine>img/maglie/1760345872_a5852310.png</path_immagine>
   </maglia>
   <maglia>
     <ID>48</ID>
@@ -478,7 +478,7 @@
     <stagione>2022/23</stagione>
     <descrizione_maglia>Seconda Maglia da Portiere.</descrizione_maglia>
     <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754853424_por222-23.jpg</path_immagine>
+    <path_immagine>img/maglie/1760345886_f4c78ebf.png</path_immagine>
   </maglia>
   <maglia>
     <ID>49</ID>
@@ -488,7 +488,7 @@
     <stagione>2001/02</stagione>
     <descrizione_maglia>Maglia Home A.S. Roma stagione 2001-02, con lo scudetto al petto.</descrizione_maglia>
     <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754855611_home01-02.jpg</path_immagine>
+    <path_immagine>img/maglie/1760346814_50a2edcb.png</path_immagine>
   </maglia>
   <maglia>
     <ID>50</ID>
@@ -498,7 +498,7 @@
     <stagione>2001/02</stagione>
     <descrizione_maglia>Maglia Home A.S. Roma stagione 2001-02, con lo scudetto al petto.</descrizione_maglia>
     <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754855640_home01-02.jpg</path_immagine>
+    <path_immagine>img/maglie/1760346823_d1d42a2e.png</path_immagine>
   </maglia>
   <maglia>
     <ID>51</ID>
@@ -508,7 +508,7 @@
     <stagione>2001/02</stagione>
     <descrizione_maglia>Maglia Home A.S. Roma stagione 2001-02, con lo scudetto al petto.</descrizione_maglia>
     <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754855694_home01-02.jpg</path_immagine>
+    <path_immagine>img/maglie/1760346848_2b182a45.png</path_immagine>
   </maglia>
   <maglia>
     <ID>52</ID>
@@ -518,7 +518,7 @@
     <stagione>2001/02</stagione>
     <descrizione_maglia>Maglia Home A.S. Roma stagione 2001-02, con lo scudetto al petto.</descrizione_maglia>
     <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754855718_home01-02.jpg</path_immagine>
+    <path_immagine>img/maglie/1760346861_0f2a3aaf.png</path_immagine>
   </maglia>
   <maglia>
     <ID>53</ID>
@@ -528,7 +528,7 @@
     <stagione>2001/02</stagione>
     <descrizione_maglia>Maglia Trasferta A.S. Roma stagione 2001-02, con lo scudetto al petto.</descrizione_maglia>
     <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754856293_fuori01-02.jpg</path_immagine>
+    <path_immagine>img/maglie/1760346705_932ed2ea.png</path_immagine>
   </maglia>
   <maglia>
     <ID>54</ID>
@@ -538,7 +538,7 @@
     <stagione>2001/02</stagione>
     <descrizione_maglia>Maglia Trasferta A.S. Roma stagione 2001-02, con lo scudetto al petto.</descrizione_maglia>
     <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754856313_fuori01-02.jpg</path_immagine>
+    <path_immagine>img/maglie/1760346749_7912787c.png</path_immagine>
   </maglia>
   <maglia>
     <ID>55</ID>
@@ -548,7 +548,7 @@
     <stagione>2001/02</stagione>
     <descrizione_maglia>Maglia Trasferta A.S. Roma stagione 2001-02, con lo scudetto al petto.</descrizione_maglia>
     <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754856343_fuori01-02.jpg</path_immagine>
+    <path_immagine>img/maglie/1760346764_0095b0ce.png</path_immagine>
   </maglia>
   <maglia>
     <ID>56</ID>
@@ -558,7 +558,7 @@
     <stagione>2001/02</stagione>
     <descrizione_maglia>Maglia Trasferta A.S. Roma stagione 2001-02, con lo scudetto al petto.</descrizione_maglia>
     <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754856357_fuori01-02.jpg</path_immagine>
+    <path_immagine>img/maglie/1760346774_d9a022ec.png</path_immagine>
   </maglia>
   <maglia>
     <ID>57</ID>
@@ -568,7 +568,7 @@
     <stagione>2001/02</stagione>
     <descrizione_maglia>Terza Maglia A.S. Roma stagione 2001-02, con lo scudetto al petto.</descrizione_maglia>
     <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754856485_terza01-02.jpg</path_immagine>
+    <path_immagine>img/maglie/1760346627_d66342e9.png</path_immagine>
   </maglia>
   <maglia>
     <ID>58</ID>
@@ -578,7 +578,7 @@
     <stagione>2001/02</stagione>
     <descrizione_maglia>Terza Maglia A.S. Roma stagione 2001-02, con lo scudetto al petto.</descrizione_maglia>
     <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754856501_terza01-02.jpg</path_immagine>
+    <path_immagine>img/maglie/1760346636_bc700713.png</path_immagine>
   </maglia>
   <maglia>
     <ID>59</ID>
@@ -588,7 +588,7 @@
     <stagione>2001/02</stagione>
     <descrizione_maglia>Terza Maglia A.S. Roma stagione 2001-02, con lo scudetto al petto.</descrizione_maglia>
     <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754856520_terza01-02.jpg</path_immagine>
+    <path_immagine>img/maglie/1760346645_559c47e9.png</path_immagine>
   </maglia>
   <maglia>
     <ID>60</ID>
@@ -598,7 +598,7 @@
     <stagione>2001/02</stagione>
     <descrizione_maglia>Terza Maglia A.S. Roma stagione 2001-02, con lo scudetto al petto.</descrizione_maglia>
     <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754856536_terza01-02.jpg</path_immagine>
+    <path_immagine>img/maglie/1760346658_ff28d789.png</path_immagine>
   </maglia>
   <maglia>
     <ID>61</ID>
@@ -608,7 +608,7 @@
     <stagione>2000/01</stagione>
     <descrizione_maglia>Maglia Home A.S. Roma stagione 2000-01, stagione dell'ultimo scudetto.</descrizione_maglia>
     <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754856630_home00-01.jpg</path_immagine>
+    <path_immagine>img/maglie/1760346339_8cde938a.png</path_immagine>
   </maglia>
   <maglia>
     <ID>62</ID>
@@ -618,7 +618,7 @@
     <stagione>2000/01</stagione>
     <descrizione_maglia>Maglia Home A.S. Roma stagione 2000-01, stagione dell'ultimo scudetto.</descrizione_maglia>
     <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754856656_home00-01.jpg</path_immagine>
+    <path_immagine>img/maglie/1760346351_84dfae36.png</path_immagine>
   </maglia>
   <maglia>
     <ID>63</ID>
@@ -628,7 +628,7 @@
     <stagione>2000/01</stagione>
     <descrizione_maglia>Maglia Home A.S. Roma stagione 2000-01, stagione dell'ultimo scudetto.</descrizione_maglia>
     <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754856671_home00-01.jpg</path_immagine>
+    <path_immagine>img/maglie/1760346359_497b84ee.png</path_immagine>
   </maglia>
   <maglia>
     <ID>64</ID>
@@ -638,126 +638,86 @@
     <stagione>2000/01</stagione>
     <descrizione_maglia>Maglia Home A.S. Roma stagione 2000-01, stagione dell'ultimo scudetto.</descrizione_maglia>
     <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754856686_home00-01.jpg</path_immagine>
+    <path_immagine>img/maglie/1760346428_35436278.png</path_immagine>
   </maglia>
-  <maglia>
+    <maglia>
     <ID>65</ID>
-    <tipo>fuori</tipo>
+    <tipo>terza</tipo>
     <taglia>S</taglia>
     <Sponsor>Kappa, INA Assitalia</Sponsor>
     <stagione>2000/01</stagione>
-    <descrizione_maglia>Maglia Trasferta A.S. Roma stagione 2000-01, stagione dell'ultimo scudetto.</descrizione_maglia>
+    <descrizione_maglia>Terza Maglia  A.S. Roma stagione 2000-01, stagione dell'ultimo scudetto.</descrizione_maglia>
     <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754856742_fuori00-01.jpg</path_immagine>
+    <path_immagine>img/maglie/1760345787_3c11193c.png</path_immagine>
   </maglia>
   <maglia>
     <ID>66</ID>
-    <tipo>fuori</tipo>
+    <tipo>terza</tipo>
     <taglia>M</taglia>
     <Sponsor>Kappa, INA Assitalia</Sponsor>
     <stagione>2000/01</stagione>
-    <descrizione_maglia>Maglia Trasferta A.S. Roma stagione 2000-01, stagione dell'ultimo scudetto. </descrizione_maglia>
+    <descrizione_maglia>Terza Maglia  A.S. Roma stagione 2000-01, stagione dell'ultimo scudetto.</descrizione_maglia>
     <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754856757_fuori00-01.jpg</path_immagine>
+    <path_immagine>img/maglie/1760345798_13cbe130.png</path_immagine>
   </maglia>
   <maglia>
     <ID>67</ID>
-    <tipo>fuori</tipo>
+    <tipo>terza</tipo>
     <taglia>L</taglia>
     <Sponsor>Kappa, INA Assitalia</Sponsor>
     <stagione>2000/01</stagione>
-    <descrizione_maglia>Maglia Trasferta A.S. Roma stagione 2000-01, stagione dell'ultimo scudetto. </descrizione_maglia>
+    <descrizione_maglia>Terza Maglia  A.S. Roma stagione 2000-01, stagione dell'ultimo scudetto.</descrizione_maglia>
     <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754856772_fuori00-01.jpg</path_immagine>
+    <path_immagine>img/maglie/1760345807_943064e6.png</path_immagine>
   </maglia>
   <maglia>
     <ID>68</ID>
-    <tipo>fuori</tipo>
+    <tipo>terza</tipo>
     <taglia>XL</taglia>
     <Sponsor>Kappa, INA Assitalia</Sponsor>
     <stagione>2000/01</stagione>
-    <descrizione_maglia>Maglia Trasferta A.S. Roma stagione 2000-01, stagione dell'ultimo scudetto. </descrizione_maglia>
+    <descrizione_maglia>Terza Maglia  A.S. Roma stagione 2000-01, stagione dell'ultimo scudetto.</descrizione_maglia>
     <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754856811_fuori00-01.jpg</path_immagine>
+    <path_immagine>img/maglie/1760345816_dd2fa6ca.png</path_immagine>
   </maglia>
   <maglia>
     <ID>69</ID>
-    <tipo>terza</tipo>
+    <tipo>portiere</tipo>
     <taglia>S</taglia>
     <Sponsor>Kappa, INA Assitalia</Sponsor>
     <stagione>2000/01</stagione>
-    <descrizione_maglia>Terza Maglia  A.S. Roma stagione 2000-01, stagione dell'ultimo scudetto. </descrizione_maglia>
+    <descrizione_maglia>Prima Maglia da Portiere.</descrizione_maglia>
     <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754856950_terza00-01.jpg</path_immagine>
+    <path_immagine>img/maglie/1760345713_31975335.png</path_immagine>
   </maglia>
   <maglia>
     <ID>70</ID>
-    <tipo>terza</tipo>
+    <tipo>portiere</tipo>
     <taglia>M</taglia>
     <Sponsor>Kappa, INA Assitalia</Sponsor>
     <stagione>2000/01</stagione>
-    <descrizione_maglia>Terza Maglia  A.S. Roma stagione 2000-01, stagione dell'ultimo scudetto. </descrizione_maglia>
+    <descrizione_maglia>Prima Maglia da Portiere.</descrizione_maglia>
     <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754856967_terza00-01.jpg</path_immagine>
+    <path_immagine>img/maglie/1760345738_9df5f3d6.png</path_immagine>
   </maglia>
   <maglia>
     <ID>71</ID>
-    <tipo>terza</tipo>
+    <tipo>portiere</tipo>
     <taglia>L</taglia>
     <Sponsor>Kappa, INA Assitalia</Sponsor>
     <stagione>2000/01</stagione>
-    <descrizione_maglia>Terza Maglia  A.S. Roma stagione 2000-01, stagione dell'ultimo scudetto. </descrizione_maglia>
+    <descrizione_maglia>Prima Maglia da Portiere.</descrizione_maglia>
     <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754856983_terza00-01.jpg</path_immagine>
+    <path_immagine>img/maglie/1760345747_620aeaed.png</path_immagine>
   </maglia>
   <maglia>
     <ID>72</ID>
-    <tipo>terza</tipo>
-    <taglia>XL</taglia>
-    <Sponsor>Kappa, INA Assitalia</Sponsor>
-    <stagione>2000/01</stagione>
-    <descrizione_maglia>Terza Maglia  A.S. Roma stagione 2000-01, stagione dell'ultimo scudetto. </descrizione_maglia>
-    <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754856998_terza00-01.jpg</path_immagine>
-  </maglia>
-  <maglia>
-    <ID>73</ID>
-    <tipo>portiere</tipo>
-    <taglia>S</taglia>
-    <Sponsor>Kappa, INA Assitalia</Sponsor>
-    <stagione>2000/01</stagione>
-    <descrizione_maglia>Prima Maglia da Portiere.</descrizione_maglia>
-    <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754857056_por100-01.jpg</path_immagine>
-  </maglia>
-  <maglia>
-    <ID>74</ID>
-    <tipo>portiere</tipo>
-    <taglia>M</taglia>
-    <Sponsor>Kappa, INA Assitalia</Sponsor>
-    <stagione>2000/01</stagione>
-    <descrizione_maglia>Prima Maglia da Portiere.</descrizione_maglia>
-    <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754857072_por100-01.jpg</path_immagine>
-  </maglia>
-  <maglia>
-    <ID>75</ID>
-    <tipo>portiere</tipo>
-    <taglia>L</taglia>
-    <Sponsor>Kappa, INA Assitalia</Sponsor>
-    <stagione>2000/01</stagione>
-    <descrizione_maglia>Prima Maglia da Portiere.</descrizione_maglia>
-    <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754857088_por100-01.jpg</path_immagine>
-  </maglia>
-  <maglia>
-    <ID>76</ID>
     <tipo>portiere</tipo>
     <taglia>XL</taglia>
     <Sponsor>Kappa, INA Assitalia</Sponsor>
     <stagione>2000/01</stagione>
     <descrizione_maglia>Prima Maglia da Portiere.</descrizione_maglia>
     <costo_fisso>100</costo_fisso>
-    <path_immagine>img/maglie/1754857106_por100-01.jpg</path_immagine>
+    <path_immagine>img/maglie/1760345757_309d1115.png</path_immagine>
   </maglia>
 </maglie>

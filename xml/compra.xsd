@@ -1,18 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
+  <!-- Tipo semplice per sconto utilizzato -->
+  <xs:simpleType name="ScontoUtilizzatoType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FEDELISSIMO"/>
+      <xs:enumeration value="BENVENUTOLUPETTO"/>
+      <xs:enumeration value="RETRO"/>
+      <xs:enumeration value="REPUTAZIONE"/>
+      <xs:enumeration value="ANZIANITA"/>
+      <xs:enumeration value="TIPO_MAGLIA"/>
+    </xs:restriction>
+  </xs:simpleType>
+
   <xs:element name="compra">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="ordine" maxOccurs="unbounded">
+        <xs:element name="ordine" minOccurs="0" maxOccurs="unbounded">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" type="xs:int"/>
               <xs:element name="ID_Utente" type="xs:int"/>
               <xs:element name="ID_Maglia" type="xs:int"/>
-              <xs:element name="pagamento_finale" type="xs:int"/>
+              <xs:element name="pagamento_finale" type="xs:float"/>
               <xs:element name="indirizzo_consegna" type="xs:string"/>
               <xs:element name="data_compra" type="xs:date"/>
+              <xs:element name="BonusUtilizzato" type="xs:string" minOccurs="0"/>
+              <xs:element name="percentualeSconto" type="xs:int" minOccurs="0"/>
+              <!-- Elemento che può comparire massimo due volte -->
+              <xs:element name="sconto_utilizzato" type="ScontoUtilizzatoType" maxOccurs="2" minOccurs="0"/>
             </xs:sequence>
           </xs:complexType>
         </xs:element>

@@ -1,24 +1,33 @@
 <?php
 session_start();
 
-/* ===================== SESSIONE ===================== */
+/* ===================== CONTROLLO ACCESSO ===================== */
 $is_logged = isset($_SESSION['Username']);
-$ruolo     = $is_logged && isset($_SESSION['Ruolo']) ? strtolower($_SESSION['Ruolo']) : null;
-$is_admin  = ($ruolo === 'admin');
+$ruolo = $is_logged && isset($_SESSION['Ruolo']) ? strtolower($_SESSION['Ruolo']) : null;
 
-if ($ruolo === 'admin' && !$is_logged) {
+//  Se è amministratore (ed è loggato), blocca accesso
+if ($is_logged && $ruolo === 'amministratore') {
     header("Location: entering.html");
     exit();
 }
 
-$homepage_link = ($is_admin ? 'homepage_admin.php' : 'homepage_user.php');
-
+/* ===================== LOGOUT ===================== */
 if (isset($_GET['logout'])) {
     session_unset();
     session_destroy();
     header("Location: entering.html");
     exit();
 }
+
+/* ===================== HOMEPAGE LINK ===================== */
+if ($is_logged) {
+    if ($ruolo === 'cliente') {
+        $homepage_link = 'homepage_user.php';
+    } 
+} else {
+    $homepage_link = 'homepage_user.php';
+}
+
 
 /* ==================== FUNZIONI UTILI ==================== */
 function caricaGiocatori($path) {
@@ -144,7 +153,11 @@ if (isset($_GET['export']) && $_GET['export'] === 'csv') {
     </a>
     <h1><a href="<?= htmlspecialchars($homepage_link) ?>" style="color:inherit;text-decoration:none;">PLAYERBASE</a></h1>
     <div class="utente-container">
-        <div class="logout"><a href="?logout=true">Logout</a></div>
+        <div class="logout"><?php if ($is_logged): ?>
+                    <a href="?logout=true"><p>Logout</p></a>
+                <?php else: ?>
+                    <a href="entering.html"><p>Login/Registrati</p></a>
+                <?php endif; ?></div>
     </div>
 </header>
 
@@ -184,8 +197,9 @@ if (isset($_GET['export']) && $_GET['export'] === 'csv') {
     </div>
 </div>
 
-<footer class="no-print">
-    <p>&copy; 2025 Playerbase. Tutti i diritti riservati.</p>
-</footer>
+<footer>
+        <p>&copy; 2025 Playerbase. Tutti i diritti riservati. </p>
+        <a class="link_footer" href="contatti.php">Contatti, policy, privacy</a>
+    </footer>
 </body>
 </html>

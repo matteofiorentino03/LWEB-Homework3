@@ -184,13 +184,90 @@ footer {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 12px 10px;
+    padding: 10px 0;
+    position: relative;
     width: 100%;
     font-size: 0.8em;
     font-weight: bold;
     display: flex;
     justify-content: center;
     box-sizing: border-box;
+    margin-top: auto;
+}
+/* testo dei diritti centrato */
+footer p {
+  margin: 0;
+  text-align: center;
+  line-height: 1;
+}
+
+footer .link_footer {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #f0ad4e;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* hover/focus styling per accessibilità */
+footer .link_footer:hover,
+footer .link_footer:focus {
+  text-decoration: underline;
+  color: #ffd18a;
+}
+
+/* ====== CHI SIAMO + FAQ SECTION ====== */
+.container-chisiamo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+/* 🔹 Stile pulsanti identico per entrambi */
+.button-link {
+    display: inline-block;
+    background-color: rgb(185, 7, 7);
+    color: rgba(231, 179, 9, 0.9);
+    font-weight: bold;
+    padding: 12px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.button-link:hover {
+    background-color: rgb(134, 3, 3);
+    color: #fff2b0;
+    transform: scale(1.05);
+}
+
+/* 🔸 Mobile responsive */
+@media (max-width: 600px) {
+    .container-chisiamo {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* su schermi stretti: link va sotto il testo e il layout diventa verticale */
+@media (max-width: 480px) {
+  footer {
+    flex-direction: column;
+    padding: 12px 16px;
+    justify-content: center;
+  }
+  footer .link_footer {
+    position: static;
+    transform: none;
+    margin-top: 8px;
+  }
 }
 
 /* Responsive */

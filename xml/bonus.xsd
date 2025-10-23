@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:simpleType name="TipoBonusType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MagliaRetro"/>
+      <xs:enumeration value="Reputazione"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="bonus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="premio" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" type="xs:int"/>
+              <xs:element name="tipo" type="TipoBonusType"/>
+              <xs:element name="descrizione" type="xs:string"/>
+              <xs:element name="crediti" type="xs:decimal"/>
+              <xs:element name="reputazioneMinima" type="xs:int" minOccurs="0"/>
+              <xs:element name="limite_utilizzi" type="xs:integer" minOccurs="0"/>
+              <xs:element name="stagione" type="xs:int" minOccurs="0"/>
+              <xs:element name="data_inizio" type="xs:date" minOccurs="0"/>
+              <xs:element name="attivo" type="xs:boolean"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

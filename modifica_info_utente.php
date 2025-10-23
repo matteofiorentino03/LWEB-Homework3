@@ -1,12 +1,6 @@
 <?php
 session_start();
 
-// ==== Controllo login ====
-if (!isset($_SESSION['Username']) || strtolower($_SESSION['Ruolo']) !== 'utente') {
-    header("Location: entering.html");
-    exit();
-}
-
 if (isset($_GET['logout'])) {
     session_unset();
     session_destroy();
@@ -26,7 +20,15 @@ try {
 $user_id = $_SESSION['ID_Utente'];
 $msg_ok = $msg_err = "";
 
-// ==== Aggiorna dati utente ====
+function getReputationColor($val) {
+    if ($val < 35) return 'rgb(141, 8, 8)';
+    if ($val < 69) return 'rgba(163, 126, 2, 0.88)';
+    return 'rgba(70, 179, 7, 0.88)';
+}
+
+/* ==========================
+    Aggiorna dati utente
+========================== */
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['salva_modifiche'])) {
     $cf       = trim($_POST['cf']);
     $username = trim($_POST['username']);
@@ -44,7 +46,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['salva_modifiche'])) {
     $upd->close();
 }
 
-// ==== Invia richiesta crediti (scrive in XML) ====
+/* ==========================
+    Invia richiesta crediti (XML)
+========================== */
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['invia_richiesta'])) {
     $importo = floatval($_POST['importo']);
     if ($importo > 0 && $importo <= 9999.99) {
@@ -75,7 +79,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['invia_richiesta'])) {
         $new->appendChild($dom->createElement("importo", number_format($importo, 2, '.', '')));
         $new->appendChild($dom->createElement("stato", "In attesa"));
 
-        // FORMATO ISO per validazione XSD
         $timestamp = date("Y-m-d\TH:i:s");
         $new->appendChild($dom->createElement("created_at", $timestamp));
 
@@ -92,15 +95,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['invia_richiesta'])) {
     }
 }
 
-// ==== Dati utente ====
-$sql_user = $conn->prepare("SELECT cf, username, Password_Utente, crediti FROM utenti WHERE ID=?");
+/* ==========================
+    Dati utente
+========================== */
+$sql_user = $conn->prepare("SELECT cf, username, Password_Utente, crediti, reputazione FROM utenti WHERE ID=?");
 $sql_user->bind_param("i", $user_id);
 $sql_user->execute();
 $res_user = $sql_user->get_result();
 $utente = $res_user->fetch_assoc();
 $sql_user->close();
 
-// ==== Carica richieste XML ====
+// Validazione valore reputazione
+if (!isset($utente['reputazione']) || $utente['reputazione'] < 0) {
+    $utente['reputazione'] = 0;
+} elseif ($utente['reputazione'] > 100) {
+    $utente['reputazione'] = 100;
+}
+
+/* ==========================
+    Carica richieste XML
+========================== */
 $richieste_utente = [];
 $xmlPath = "xml/crediti_richieste.xml";
 if (file_exists($xmlPath)) {
@@ -176,6 +190,12 @@ if (file_exists($xmlPath)) {
                 <label class="label">Password</label>
                 <input type="text" name="password" value="<?= htmlspecialchars($utente['Password_Utente']) ?>" class="input">
             </div>
+            <div class="col">
+                <label class="label">Reputazione</label>
+                <div class="reputation-box" style="background-color: <?= getReputationColor($utente['reputazione']) ?>;">
+                    <?= htmlspecialchars($utente['reputazione']) ?> / 100
+                </div>
+            </div>
         </div>
         <button type="submit" name="salva_modifiche" class="btn-submit">Salva modifiche</button>
     </form>
@@ -224,6 +244,7 @@ if (file_exists($xmlPath)) {
 
 <footer>
   <p>&copy; 2025 Playerbase. Tutti i diritti riservati.</p>
+  <a class="link_footer" href="contatti.php">Contatti, policy, privacy</a>
 </footer>
 
 </body>

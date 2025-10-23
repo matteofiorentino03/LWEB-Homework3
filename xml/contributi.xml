@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contributi xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="contributi.xsd">
+
+  <contributo ID="1">
+    <Tipo>Domanda</Tipo>
+    <Titolo>Come funziona la sezione FAQ?</Titolo>
+    <Testo>Vorrei sapere come vengono scelte le discussioni che appaiono nella pagina FAQ.</Testo>
+    <Autore>
+      <Username>marta12</Username>
+      <Ruolo>Cliente</Ruolo>
+    </Autore>
+
+    <Giudizi>
+      <Giudizio data="2025-10-10">
+        <Utente>admin_master</Utente>
+        <Reputazione>ALTA</Reputazione>
+        <Utilita>5</Utilita>
+        <Supporto>3</Supporto>
+      </Giudizio>
+      <Giudizio data="2025-10-10">
+        <Utente>giulia23</Utente>
+        <Reputazione>MEDIA</Reputazione>
+        <Utilita>4</Utilita>
+        <Supporto>2</Supporto>
+      </Giudizio>
+    </Giudizi>
+
+    <Stato>Elevato</Stato>
+  </contributo>
+
+
+  <contributo ID="2">
+    <Tipo>Risposta</Tipo>
+    <Testo>Le FAQ vengono generate dalle domande più utili e votate, dopo approvazione del Gestore o dell’Amministratore.</Testo>
+    <Autore>
+      <Username>gestore1</Username>
+      <Ruolo>Gestore</Ruolo>
+    </Autore>
+    <RifContributoID>1</RifContributoID>
+    <Stato>Elevato</Stato>
+  </contributo>
+
+
+  <contributo ID="3">
+    <Tipo>Intervento</Tipo>
+    <Testo>Ritengo utile aggiungere un sistema di notifica quando un contributo riceve nuovi giudizi.</Testo>
+    <Autore>
+      <Username>andrea45</Username>
+      <Ruolo>Cliente</Ruolo>
+    </Autore>
+    <Giudizi>
+      <Giudizio data="2025-10-10">
+        <Utente>luca88</Utente>
+        <Reputazione>MEDIA</Reputazione>
+        <Utilita>3</Utilita>
+        <Supporto>2</Supporto>
+      </Giudizio>
+    </Giudizi>
+    <Stato>Normale</Stato>
+  </contributo>
+
+</contributi>

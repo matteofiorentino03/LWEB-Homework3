@@ -17,7 +17,7 @@ if (isset($_GET['logout'])) {
 
 // Verifica se l'utente è loggato, altrimenti reindirizza alla pagina di login
 if (!isset($_SESSION['Username'])) {
-    header("Location: entering.html");
+    header("Location: entering.htmal");
     exit();
 }
 // Recupera il nome utente dalla sessione
@@ -56,6 +56,10 @@ $username = $_SESSION['Username'];
         <br />
     </div>
 
+    <div class="container-chisiamo">
+    <a href="faq.php" class="button-link">FAQ</a>
+    <a href="forum.php" class="button-link">Forum</a>
+    </div>
 
     <div class="main-container">
     <!-- Slideshow di 4 foto -->
@@ -91,20 +95,16 @@ $username = $_SESSION['Username'];
         <div class="table">
             <p>Scegli una tabella per visualizzare o modificare i dati:</p>
             <ul class="table-list">
-                <li><a href="inserimenti.php">Inserire un nuovo record</a></li>
-                <li><a href="modifiche.php">Modificare le informazioni di un record</a></li>
-                <li><a href="cancella_giocatore.php">Cancellare un giocatore</a></li>
-                <li><a href="visualizzazione_tabelle.php">Visualizzazione delle tabelle</a></li>
+                <li><a href="modifica_utente.php">Modificare le informazioni di un utente oppure attivare/bannare account</a></li>
                 <li><a href="dashboard.php">Visualizza tutti gli Utenti registrati</a></li>
                 <li><a href="accettazione_crediti.php">Accettazione richieste dei crediti</a></li>
-                <li><a href="storico_acquisti.php">Visualizzazione dello storico degli acquisti effettuati dagli utenti</a></li>
-                <li><a href="storico_inserimenti.php">Visualizzazione dello storico degli inserimenti</a></li>
             </ul>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2025 Playerbase. Tutti i diritti riservati.</p>
+        <p>&copy; 2025 Playerbase. Tutti i diritti riservati. </p>
+        <a class="link_footer" href="contatti.php">Contatti, policy, privacy</a>
     </footer>
     <script>
         let slideIndex = 0;

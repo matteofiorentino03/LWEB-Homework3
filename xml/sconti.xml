@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sconti xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="sconti.xsd">
+
+  <!-- FEDELISSIMO -->
+  <sconto>
+    <ID>1</ID>
+    <tipo>FEDELISSIMO</tipo>
+    <nome>Sconto Fedelissimo 22%</nome>
+    <attivo>true</attivo>
+    <data_inizio>2023-01-01</data_inizio>
+    <data_fine>2026-01-01</data_fine>
+    <percentualeFissa>22</percentualeFissa>    
+    <patternCodice>FEDELISSIMO22</patternCodice>
+</sconto>
+
+  <!-- BENVENUTOLUPETTO -->
+  <sconto>
+    <ID>2</ID>
+    <tipo>BENVENUTOLUPETTO</tipo>
+    <nome>Benvenuto Lupetto</nome>
+    <attivo>true</attivo>
+    <data_inizio>2023-01-01</data_inizio>
+    <data_fine>2026-01-01</data_fine>
+    <percentualeMax>30</percentualeMax>
+    <patternCodice>^BENVENUTOLUPETTO([0-9]{1,2})$</patternCodice>
+  </sconto>
+
+  <!-- REPUTAZIONE -->
+  <sconto>
+    <ID>3</ID>
+    <tipo>REPUTAZIONE</tipo>
+    <nome>Sconto Reputazione</nome>
+    <attivo>true</attivo>
+    <data_inizio>2023-01-01</data_inizio>
+    <data_fine>2026-01-01</data_fine>
+    <scontoReputazione>
+      
+      
+      
+    <soglia><maxReputazione>30</maxReputazione><percentualeSconto>0</percentualeSconto></soglia><soglia><maxReputazione>70</maxReputazione><percentualeSconto>15</percentualeSconto></soglia><soglia><maxReputazione>100</maxReputazione><percentualeSconto>30</percentualeSconto></soglia></scontoReputazione>
+  </sconto>
+
+  <!-- ANZIANITA -->
+  <sconto>
+    <ID>4</ID>
+    <tipo>ANZIANITA</tipo>
+    <nome>Sconto Anzianità</nome>
+    <attivo>true</attivo>
+    <data_inizio>2023-01-01</data_inizio>
+    <data_fine>2026-01-01</data_fine>
+    <periodoMensilita>7</periodoMensilita>
+    <incrementoPercentuale>3</incrementoPercentuale>
+    <percentualeMax>30</percentualeMax>
+  </sconto>
+
+  <!-- TIPO_MAGLIA -->
+  <sconto>
+    <ID>5</ID>
+    <tipo>TIPO_MAGLIA</tipo>
+    <nome>Promo per Tipo Maglia</nome>
+    <attivo>true</attivo>
+    <data_inizio>2023-01-01</data_inizio>
+    <data_fine>2026-01-01</data_fine>
+    <percentualeFissa>30</percentualeFissa>
+    <condizioniMaglia>
+      <tipo>TERZA</tipo>
+    </condizioniMaglia>
+  </sconto>
+
+  <!-- RETRO -->
+  <sconto>
+    <ID>6</ID>
+    <tipo>RETRO</tipo>
+    <nome>Sconto Retro 2001/02</nome>
+    <attivo>true</attivo>
+    <data_inizio>2023-01-01</data_inizio>
+    <data_fine>2026-01-01</data_fine>
+    <percentualeFissa>25</percentualeFissa>
+    <condizioniMaglia>
+      <stagione>2001/02</stagione>
+      <tipo>CASA</tipo>
+      <tipo>FUORI</tipo>
+      <tipo>TERZA</tipo>
+    </condizioniMaglia>
+  </sconto>
+</sconti>

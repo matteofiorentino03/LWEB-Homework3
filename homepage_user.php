@@ -35,7 +35,7 @@ $username = $isLoggedIn ? $_SESSION['Username'] : null;
                 <?php if ($isLoggedIn): ?>
                     <a href="?logout=true"><p>Logout</p></a>
                 <?php else: ?>
-                    <a href="entering.html"><p>Login / Registrati</p></a>
+                    <a href="entering.html"><p>Login/Registrati</p></a>
                 <?php endif; ?>
             </div>
         </div>
@@ -48,6 +48,15 @@ $username = $isLoggedIn ? $_SESSION['Username'] : null;
             <h2>Benvenuto su Playerbase!</h2>
         <?php endif; ?>
         <br />
+    </div>
+
+    <!--  SEZIONE CHI SIAMO + FAQ  -->
+    <div class="container-chisiamo">
+        <a href="about_us.php" class="button-link">Chi siamo?</a>
+        <a href="faq.php" class="button-link">FAQ</a>
+        <?php if ($isLoggedIn): ?>
+            <a href="forum.php" class="button-link">Forum</a>              
+        <?php endif; ?>
     </div>
 
     <div class="main-container">
@@ -68,16 +77,18 @@ $username = $isLoggedIn ? $_SESSION['Username'] : null;
                 <li><a href="tabella_giocatore.php">Visualizza tutti i Giocatori di questa stagione</a></li>
                 <li><a href="visualizzazione_classifica_marcatori.php">Visualizzazione della classifica dei marcatori</a></li>
                 <li><a href="catalogo_maglie.php">Catalogo delle maglie</a></li>
-                <?php if (isset($isLoggedIn) && $isLoggedIn == true): ?>
-                <li><a href="storico_acquisti_utente.php">Visualizzazione dello storico degli acquisti effettuati</a></li>
-                <li><a href="modifica_info_utente.php">Modificare le informazioni personali</a></li>
+                <?php if ($isLoggedIn): ?>
+                    <li><a href="carrello.php">Carrello</a></li>
+                    <li><a href="storico_acquisti_utente.php">Visualizzazione dello storico degli acquisti effettuati</a></li>
+                    <li><a href="modifica_info_utente.php">Modificare le informazioni personali</a></li>
                 <?php endif; ?>
             </ul>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2025 Playerbase. Tutti i diritti riservati.</p>
+        <p>&copy; 2025 Playerbase. Tutti i diritti riservati. </p>
+        <a class="link_footer" href="contatti.php">Contatti, policy, privacy</a>
     </footer>
 
     <script>
